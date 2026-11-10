@@ -8,7 +8,7 @@
 <link rel="icon" href="img/logo-lion.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Geist:wght@300..700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
@@ -243,10 +243,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 .reveal-img{clip-path:inset(100% 0 0 0)}
 
 /* 2026 type system */
-em,.marq span,.step .n{font-family:var(--ital)!important;font-weight:400!important;font-style:italic;letter-spacing:-.01em}
+em,.marq span,.step .n{font-family:var(--serif)!important;font-style:normal!important;font-weight:700!important;letter-spacing:-.04em}
+.marq span{font-weight:300!important;text-transform:uppercase;letter-spacing:.02em}
 h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 96}
 .hero h1{line-height:.88}
-.hero h1 em,h2.title em,.cta h2 em{font-size:1.08em}
+.hero h1 em,h2.title em,.cta h2 em{font-size:1em}
 .marq span{font-size:clamp(2rem,4vw,3.4rem)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
