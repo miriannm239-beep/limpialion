@@ -161,7 +161,7 @@ section{position:relative}
 .tabs button{position:relative;z-index:1;border:0;background:none;font:600 .9rem var(--sans);padding:12px 26px;border-radius:100px;cursor:pointer;color:#5c5446;transition:color .4s}
 .tabs button.on{color:var(--cream)}
 .tabs .pill{position:absolute;top:5px;bottom:5px;left:5px;border-radius:100px;background:var(--ink);transition:all .5s cubic-bezier(.7,0,.2,1)}
-.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:40px}
 .plan{background:#fffdf8;border:1px solid #e3d8c2;border-radius:22px;padding:30px 26px;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s,background .5s}
 .plan:hover{transform:translateY(-10px);box-shadow:0 30px 60px -30px rgba(80,60,20,.45)}
 .plan .h{font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold3)}
@@ -289,6 +289,16 @@ h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 
 .rv-nav{display:flex;gap:10px}
 .rv-nav button{width:48px;height:48px;border-radius:50%;border:1px solid #ddd0b4;background:#fff;cursor:pointer;font-size:1.1rem;transition:all .3s}
 .rv-nav button:hover{background:#1b1813;color:#fff;border-color:#1b1813}
+
+.tabs{flex-wrap:wrap}
+.t3{display:inline-flex;align-items:center;gap:8px}
+.hot{font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:100px;background:var(--grad);color:var(--ink);animation:hotp 1.6s ease-in-out infinite}
+@keyframes hotp{50%{transform:scale(1.12);box-shadow:0 0 0 6px rgba(212,175,90,.25)}}
+.t3:not(.on){color:#1b1813!important}
+.more-q{margin-top:18px;color:#5c5446;font-size:.95rem}
+.more-q a{color:var(--gold3);font-weight:700;border-bottom:1px solid currentColor}
+.plan.quote{background:linear-gradient(160deg,#c89b3c,#f3d98b);border:0;color:var(--ink)}
+.plan.quote .d{color:#4a3c1c}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -390,7 +400,8 @@ h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 
     <div><span class="eyebrow">Limpieza profunda</span><h2 class="title">Más manos,<br><em>mejores resultados.</em></h2></div>
     <p class="up">Ideal para cuando necesitas una limpieza más completa: mudanzas, fiestas, fin de año o simplemente empezar de cero. Tu hogar, en las mejores manos.</p>
   </div>
-  <div class="tabs" id="tabs"><div class="pill"></div><button class="on" data-t="2">2 expertas</button><button data-t="3">3 expertas</button></div>
+  <div class="tabs" id="tabs"><div class="pill"></div><button class="on" data-t="2">2 expertas</button><button data-t="3" class="t3">3 expertas <span class="hot">+ rápido</span></button></div>
+  <p class="more-q">¿Necesitas <b>más de 3 personas</b> o una casa grande? <a data-wa data-msg="Hola! Necesito cotizar una limpieza con más de 3 personas." href="#">Cotiza por WhatsApp →</a></p>
   <div class="plans" id="plans"></div>
   <div class="deep-hero">
     <div class="im"><img class="reveal-img" src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1600&q=80" alt="Equipo de limpieza"></div>
@@ -493,8 +504,8 @@ pick(0);
 const P={2:[[5,150],[6,175],[7,195],[8,235]],3:[[5,220],[6,265],[7,295],[8,360]]};
 const pl=document.getElementById('plans');
 function renderPlans(t){
-  pl.innerHTML=P[t].map((p,i)=>`<div class="plan ${i===3?'feat-p':''}">${i===3?'<span class="tag">Más completo</span>':''}<div class="h">${p[0]} horas</div><div class="v"><sup>S/</sup>${p[1]}</div><div class="d">${t} expertas en limpieza</div><a class="btn ${i===3?'btn-gold':'btn-line'}" style="margin-top:22px;padding:10px 18px;font-size:.8rem;${i===3?'':'color:inherit;border-color:#cbbd9f'}" target="_blank" href="${waLink(`Hola! Quiero la limpieza profunda con ${t} expertas por ${p[0]} horas (S/${p[1]}).`)}">Reservar</a></div>`).join('');
-  gsap.from('#plans .plan',{y:40,opacity:0,stagger:.08,duration:.7,ease:'power3.out'});
+  pl.innerHTML=P[t].map((p,i)=>`<div class="plan ${i===3?'feat-p':''}">${i===3?'<span class="tag">Más completo</span>':''}<div class="h">${p[0]} horas</div><div class="v"><sup>S/</sup>${p[1]}</div><div class="d">${t} expertas en limpieza</div><a class="btn ${i===3?'btn-gold':'btn-line'}" style="margin-top:22px;padding:10px 18px;font-size:.8rem;${i===3?'':'color:inherit;border-color:#cbbd9f'}" target="_blank" href="${waLink(`Hola! Quiero la limpieza profunda con ${t} expertas por ${p[0]} horas (S/${p[1]}).`)}">Reservar</a></div>`).join('')+`<div class="plan quote"><span class="tag" style="background:var(--ink);color:var(--gold2)">¿Más personas?</span><div class="h" style="color:#4a3c1c">4 o más expertas</div><div class="v" style="font-size:2.2rem">Cotiza</div><div class="d">Casas grandes, mudanzas o fin de obra. Te armamos un precio a medida.</div><a class="btn" style="margin-top:22px;padding:10px 18px;font-size:.8rem;background:var(--ink);color:var(--cream)" target="_blank" href="${waLink('Hola! Quiero cotizar una limpieza con 4 o más personas.')}">Cotizar</a></div>`;
+  gsap.fromTo('#plans .plan',{y:40,opacity:0},{y:0,opacity:1,stagger:.08,duration:.7,ease:'power3.out',clearProps:'all'});
 }
 const tabs=document.getElementById('tabs'),pill=tabs.querySelector('.pill');
 function movePill(b){pill.style.width=b.offsetWidth+'px';pill.style.left=b.offsetLeft+'px'}
@@ -579,7 +590,6 @@ document.querySelectorAll('.cnt').forEach(n=>{const o={v:0};gsap.to(o,{v:+n.data
 
 /* promos fan in */
 gsap.from('.promo',{y:200,rotateX:30,opacity:0,stagger:.15,duration:1.4,ease:'power4.out',scrollTrigger:{trigger:'.promo-row',start:'top 85%'}});
-gsap.from('.plan',{y:40,opacity:0,stagger:.08,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'#plans',start:'top 88%'}});
 
 /* cta bg */
 gsap.to('.cta-bg',{scale:1,ease:'none',scrollTrigger:{trigger:'.cta',start:'top bottom',end:'bottom top',scrub:true}});
