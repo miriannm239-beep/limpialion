@@ -384,23 +384,16 @@ nav .btn::after{flex-basis:32px;height:32px}
 }
 @media(max-width:600px){.plans{grid-template-columns:1fr 1fr!important;gap:12px}.plan{padding:22px 16px}.plan .v{font-size:2.5rem}.plan .btn{width:100%;justify-content:space-between;padding:5px 5px 5px 14px!important;min-height:44px;font-size:.8rem!important}.plan .btn::after{flex-basis:32px;height:32px}}
 
-/* ===== marquee ribbons ===== */
-.mq{position:relative;height:clamp(190px,20vw,240px);background:var(--ink);overflow:hidden;display:grid;place-items:center}
-.mq-band{position:absolute;left:-5%;width:110%;padding:clamp(14px,1.6vw,20px) 0;overflow:hidden}
-.mq-a{top:22%;background:linear-gradient(90deg,#c89b3c,#f3d98b 50%,#c89b3c);transform:rotate(-3.5deg);z-index:2;box-shadow:0 20px 40px -10px rgba(0,0,0,.5)}
-.mq-b{bottom:18%;background:#2f251b;transform:rotate(3deg);border-block:1px solid rgba(243,217,139,.25);z-index:1}
-.mq-track{display:flex;align-items:center;gap:clamp(22px,3vw,40px);width:max-content;animation:mq 26s linear infinite;white-space:nowrap}
-.mq-track.rev{animation-direction:reverse;animation-duration:32s}
-@keyframes mq{to{transform:translateX(-50%)}}
-.mq-w{font-family:var(--serif);font-weight:800;font-size:clamp(1.5rem,3.4vw,2.8rem);letter-spacing:-.03em;text-transform:uppercase;line-height:1}
-.mq-a .mq-w{color:#2a2119}
-.mq-a .mq-w.o{color:transparent;-webkit-text-stroke:1.5px #2a2119}
-.mq-b .mq-w{color:var(--cream);font-weight:500;font-size:clamp(1.1rem,2.4vw,1.9rem);letter-spacing:-.01em;text-transform:none}
-.mq-b .mq-w.o{color:transparent;-webkit-text-stroke:1px var(--gold2)}
-.mq-st{width:clamp(18px,2vw,26px);height:clamp(18px,2vw,26px);flex:0 0 auto;animation:mqspin 6s linear infinite}
-.mq-a .mq-st{fill:#2a2119}.mq-b .mq-st{fill:var(--gold2)}
-@keyframes mqspin{to{transform:rotate(360deg)}}
-.mq:hover .mq-track{animation-play-state:paused}
+
+
+/* ===== elegant marquee ===== */
+.mq{position:relative;background:var(--ink);padding:clamp(22px,2.6vw,30px) 0;overflow:hidden}
+.mq::before,.mq::after{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(243,217,139,.55),transparent)}
+.mq::before{top:0}.mq::after{bottom:0}
+.mq-track{display:flex;align-items:center;gap:clamp(28px,4vw,56px);width:max-content;animation:mq 45s linear infinite;white-space:nowrap}
+@keyframes mq{to{transform:translateX(-33.333%)}}
+.mq-w{font-family:var(--sans);font-weight:300;font-size:clamp(.8rem,1.3vw,1rem);letter-spacing:.45em;text-transform:uppercase;color:#e9dfcc}
+.mq-d{width:6px;height:6px;flex:0 0 auto;transform:rotate(45deg);background:var(--grad);box-shadow:0 0 12px rgba(243,217,139,.6)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -441,10 +434,7 @@ nav .btn::after{flex-basis:32px;height:32px}
   <div class="scroll-ind">DESLIZA</div>
 </header>
 
-<div class="mq">
-  <div class="mq-band mq-a"><div class="mq-track"><span class="mq-w">Confianza</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w o">Responsabilidad</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w">Calidad</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w o">Limpieza</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w">Tranquilidad</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w">Confianza</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w o">Responsabilidad</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w">Calidad</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w o">Limpieza</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w">Tranquilidad</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg></div></div>
-  <div class="mq-band mq-b"><div class="mq-track rev"><span class="mq-w">Hogar impecable</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w o">Leonas en limpieza</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w">Lunes a sábado</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w o">Personal confiable</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w">Reserva por WhatsApp</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w">Hogar impecable</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w o">Leonas en limpieza</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w">Lunes a sábado</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w o">Personal confiable</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg><span class="mq-w">Reserva por WhatsApp</span><svg class="mq-st" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg></div></div>
-</div>
+<div class="mq"><div class="mq-track"><span class="mq-w">Confianza</span><i class="mq-d"></i><span class="mq-w">Responsabilidad</span><i class="mq-d"></i><span class="mq-w">Calidad</span><i class="mq-d"></i><span class="mq-w">Limpieza</span><i class="mq-d"></i><span class="mq-w">Tranquilidad</span><i class="mq-d"></i><span class="mq-w">Lunes a sábado</span><i class="mq-d"></i><span class="mq-w">Confianza</span><i class="mq-d"></i><span class="mq-w">Responsabilidad</span><i class="mq-d"></i><span class="mq-w">Calidad</span><i class="mq-d"></i><span class="mq-w">Limpieza</span><i class="mq-d"></i><span class="mq-w">Tranquilidad</span><i class="mq-d"></i><span class="mq-w">Lunes a sábado</span><i class="mq-d"></i><span class="mq-w">Confianza</span><i class="mq-d"></i><span class="mq-w">Responsabilidad</span><i class="mq-d"></i><span class="mq-w">Calidad</span><i class="mq-d"></i><span class="mq-w">Limpieza</span><i class="mq-d"></i><span class="mq-w">Tranquilidad</span><i class="mq-d"></i><span class="mq-w">Lunes a sábado</span><i class="mq-d"></i></div></div>
 
 <section class="intro lt" id="servicios"><div class="wrap">
   <span class="eyebrow">Sobre nosotras</span>
@@ -791,11 +781,6 @@ if(matchMedia('(hover:hover)').matches)document.querySelectorAll('.btn').forEach
   b.addEventListener('mouseleave',()=>gsap.to(b,{x:0,y:0,duration:.7,ease:'elastic.out(1,.4)'}));
 });
 
-/* ribbons speed up with scroll */
-gsap.from('.mq-a',{rotate:-12,scaleX:.6,opacity:0,duration:1.4,ease:'expo.out',scrollTrigger:{trigger:'.mq',start:'top 90%'}});
-gsap.from('.mq-b',{rotate:12,scaleX:.6,opacity:0,duration:1.4,delay:.15,ease:'expo.out',scrollTrigger:{trigger:'.mq',start:'top 90%'}});
-gsap.to('.mq-a',{rotate:-1.5,ease:'none',scrollTrigger:{trigger:'.mq',start:'top bottom',end:'bottom top',scrub:true}});
-gsap.to('.mq-b',{rotate:1,ease:'none',scrollTrigger:{trigger:'.mq',start:'top bottom',end:'bottom top',scrub:true}});
 addEventListener('load',()=>ScrollTrigger.refresh());
 addEventListener('resize',()=>movePill(tabs.querySelector('.on')));
 </script>
