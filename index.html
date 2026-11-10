@@ -303,7 +303,7 @@ h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 
 .rv{flex:0 0 clamp(270px,30vw,370px);scroll-snap-align:start;background:#fff;border:1px solid #efe6d3;border-radius:22px;padding:26px;box-shadow:0 24px 50px -36px rgba(60,40,10,.4);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .rv:hover{transform:translateY(-8px)}
 .rv-h{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;background:linear-gradient(135deg,#c89b3c,#7a5c1c)}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:500;font-size:1.25rem;color:#fff;font-family:Roboto,Arial,sans-serif}
 .rv-h b{display:block;font-size:.95rem}.rv-h small{color:#8f877a;font-size:.78rem}
 .rv-h .g-ic{margin-left:auto;width:22px;height:22px}
 .rv p{color:#4a4338;line-height:1.65;font-size:.95rem;margin-top:10px}
@@ -694,7 +694,8 @@ const GICON=`<svg class="g-ic" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6
   const tr=document.getElementById('rvTrack');
   if(!REVIEWS.length){document.getElementById('rvScore').style.display='none'}
   else{const avg=REVIEWS.reduce((a,r)=>a+r.s,0)/REVIEWS.length;document.getElementById('rvAvg').textContent=avg.toFixed(1);document.getElementById('rvCount').textContent='Reseñas de ejemplo'}
-  tr.innerHTML=REVIEWS.map(r=>`<div class="rv"><div class="rv-h"><div class="av">${r.n[0]}</div><div><b>${r.n}</b><small>${r.t}</small></div></div><div class="stars">${'★'.repeat(r.s)}</div><p>${r.r}</p></div>`).join('')
+  const AVC=['#1a73e8','#e8710a','#188038','#d93025','#9334e6','#00897b','#c2185b'],AGO=['hace 1 semana','hace 2 semanas','hace 3 semanas','hace 1 mes','hace 1 mes'];
+  tr.innerHTML=REVIEWS.map((r,i)=>`<div class="rv"><div class="rv-h"><div class="av" style="background:${AVC[i%AVC.length]}">${r.n[0]}</div><div><b>${r.n}</b><small>${r.t} · ${AGO[i%AGO.length]}</small></div></div><div class="stars">${'★'.repeat(r.s)}<span style="color:#dadce0">${'★'.repeat(5-r.s)}</span></div><p>${r.r}</p></div>`).join('')
    +`<div class="rv empty"><div class="stars">★★★★★</div><h3 style="font-family:var(--serif);font-size:1.6rem;line-height:1.1">¿Ya te atendimos?</h3><p>Cuéntanos cómo te fue. Tu opinión ayuda a otras familias a elegirnos.</p><a class="btn btn-gold" target="_blank" href="${waLink('Hola! Quiero dejar mi reseña sobre el servicio de Limpialion.')}">Dejar mi reseña</a></div>`;
   document.querySelectorAll('.rv-nav button').forEach(b=>b.onclick=()=>tr.scrollBy({left:+b.dataset.d*380,behavior:'smooth'}));
   gsap.from('.rv',{y:60,opacity:0,stagger:.1,duration:1,ease:'power3.out',scrollTrigger:{trigger:'#rvTrack',start:'top 85%'}});
