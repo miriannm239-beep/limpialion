@@ -27,7 +27,7 @@ body{background:var(--ink);color:var(--cream);font-family:var(--sans);overflow-x
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--gold);color:var(--ink)}
-.gold{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shine 6s linear infinite}
+.gold{--gg:var(--grad);background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shine 6s linear infinite}
 @keyframes shine{to{background-position:200% center}}
 .wrap{width:min(1280px,100% - 32px);margin-inline:auto}
 .eyebrow{font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:12px}
@@ -277,7 +277,7 @@ h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 
 .lt{background:#fffdf9!important;color:#1b1813}
 .lt2{background:var(--cream)!important;color:#1b1813}
 .lt .eyebrow,.lt2 .eyebrow{color:var(--gold3)}.lt .eyebrow::before,.lt2 .eyebrow::before{background:var(--gold3)}
-.lt .gold,.lt2 .gold{background-image:linear-gradient(120deg,#8a6a22,#c89b3c 45%,#a8822f 70%,#7a5c1c)}
+.lt .gold,.lt2 .gold,.incl .gold,.reviews .gold{--gg:linear-gradient(120deg,#8a6a22,#c89b3c 45%,#a8822f 70%,#7a5c1c);background-image:var(--gg)}
 .lt .feats{background:#efe6d3;border-color:#efe6d3}
 .lt .feat{background:#fffdf9}.lt .feat:hover{background:#fbf5ea}
 .lt .feat .ic{background:#fbf3e2;border-color:#ead9b4}.lt .feat svg{stroke:var(--gold3)}
@@ -322,7 +322,7 @@ h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 
 .more-q a{color:var(--gold3);font-weight:700;border-bottom:1px solid currentColor}
 .plan.quote{background:linear-gradient(160deg,#c89b3c,#f3d98b);border:0;color:var(--ink)}
 .plan.quote .d{color:#4a3c1c}
-.gold .ch{background-image:inherit;background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+.gold .ch{background-image:var(--gg);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
 html,body{overflow-x:clip;max-width:100%}
 section,header,footer,.marq{overflow-x:clip}
 @media(max-width:700px){
@@ -336,7 +336,6 @@ section,header,footer,.marq{overflow-x:clip}
 /* ===== incluye ===== */
 .incl{padding:clamp(90px,12vw,160px) 0;background:linear-gradient(180deg,#fffdf9,#f6efe2);color:#1b1813}
 .incl .eyebrow{color:var(--gold3)}.incl .eyebrow::before{background:var(--gold3)}
-.incl .gold,.incl .gold .ch{background-image:linear-gradient(120deg,#8a6a22,#c89b3c 45%,#a8822f 70%,#7a5c1c)}
 .inc-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;margin-top:56px;align-items:start}
 .inc-card{border-radius:28px;padding:clamp(24px,3.5vw,40px);position:relative;overflow:hidden}
 .inc-card.yes{background:#fff;border:1px solid #ece3d0;box-shadow:0 40px 80px -50px rgba(60,40,10,.45)}
