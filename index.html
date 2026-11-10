@@ -249,6 +249,46 @@ h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 
 .hero h1{line-height:.88}
 .hero h1 em,h2.title em,.cta h2 em{font-size:1em}
 .marq span{font-size:clamp(2rem,4vw,3.4rem)}
+
+/* ===== light theme ===== */
+.lt{background:#fffdf9!important;color:#1b1813}
+.lt2{background:var(--cream)!important;color:#1b1813}
+.lt .eyebrow,.lt2 .eyebrow{color:var(--gold3)}.lt .eyebrow::before,.lt2 .eyebrow::before{background:var(--gold3)}
+.lt .gold,.lt2 .gold{background-image:linear-gradient(120deg,#8a6a22,#c89b3c 45%,#a8822f 70%,#7a5c1c)}
+.lt .feats{background:#efe6d3;border-color:#efe6d3}
+.lt .feat{background:#fffdf9}.lt .feat:hover{background:#fbf5ea}
+.lt .feat .ic{background:#fbf3e2;border-color:#ead9b4}.lt .feat svg{stroke:var(--gold3)}
+.lt .feat p,.lt .stat span,.lt2 .step p{color:#6f665a}
+.lt .p-lead p{color:#5c5446}.lt .p-from small{color:#8f877a}
+.lt .p-note{color:#4a4338;background:#fbf3e2}
+.lt .stats{border-color:#ece3d0}.lt .stat{border-color:#ece3d0}
+.lt2 .step-list,.lt2 .step{border-color:#e2d6bd}
+.lt2 .step::before{background:linear-gradient(90deg,rgba(168,130,47,.12),transparent)}
+.lt .calc{box-shadow:0 40px 80px -40px rgba(60,40,10,.45);color:var(--cream)}
+.lt .btn-line{color:#1b1813;border-color:#cbbd9f}.lt .btn-line:hover{color:var(--cream)}.lt .btn-line::before{background:#1b1813}
+/* ===== reviews ===== */
+.reviews{padding:clamp(90px,12vw,160px) 0;background:#fffdf9;color:#1b1813;overflow:hidden}
+.reviews .eyebrow{color:var(--gold3)}.reviews .eyebrow::before{background:var(--gold3)}
+.rv-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.rv-score{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid #ece3d0;border-radius:20px;padding:16px 22px;box-shadow:0 20px 40px -30px rgba(60,40,10,.35)}
+.rv-score b{font-family:var(--serif);font-size:2.4rem;line-height:1}
+.stars{color:#f5b301;letter-spacing:2px;font-size:1.05rem}
+.rv-score small{display:block;color:#6f665a;font-size:.8rem;margin-top:2px}
+.g-ic{width:30px;height:30px}
+.rv-track{display:flex;gap:22px;margin-top:50px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px max(16px,calc((100vw - 1280px)/2)) 30px;scrollbar-width:none}
+.rv-track::-webkit-scrollbar{display:none}
+.rv{flex:0 0 clamp(270px,30vw,370px);scroll-snap-align:start;background:#fff;border:1px solid #efe6d3;border-radius:22px;padding:26px;box-shadow:0 24px 50px -36px rgba(60,40,10,.4);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.rv:hover{transform:translateY(-8px)}
+.rv-h{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;background:linear-gradient(135deg,#c89b3c,#7a5c1c)}
+.rv-h b{display:block;font-size:.95rem}.rv-h small{color:#8f877a;font-size:.78rem}
+.rv-h .g-ic{margin-left:auto;width:22px;height:22px}
+.rv p{color:#4a4338;line-height:1.65;font-size:.95rem;margin-top:10px}
+.rv.empty{display:flex;flex-direction:column;justify-content:center;gap:14px;background:linear-gradient(160deg,#1b1813,#2a241a);color:var(--cream);border:0}
+.rv.empty p{color:#cfc6b5}
+.rv-nav{display:flex;gap:10px}
+.rv-nav button{width:48px;height:48px;border-radius:50%;border:1px solid #ddd0b4;background:#fff;cursor:pointer;font-size:1.1rem;transition:all .3s}
+.rv-nav button:hover{background:#1b1813;color:#fff;border-color:#1b1813}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -265,7 +305,7 @@ h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 
     <img src="img/logo-lion.png" alt="" style="height:50px;width:auto">
     <img src="img/logo-text.png" alt="Limpialion · Leonas en limpieza" style="height:34px;width:auto">
   </a>
-  <div class="links"><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#profunda">Limpieza profunda</a><a href="#proceso">Cómo funciona</a></div>
+  <div class="links"><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#profunda">Limpieza profunda</a><a href="#resenas">Reseñas</a><a href="#proceso">Cómo funciona</a></div>
   <a class="btn btn-gold" data-wa href="#">Reservar</a>
 </div></nav>
 
@@ -294,7 +334,7 @@ h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 
   <span>Confianza</span><span>Responsabilidad</span><span>Calidad</span><span>Limpieza</span><span>Tranquilidad</span>
 </div></div>
 
-<section class="intro" id="servicios"><div class="wrap">
+<section class="intro lt" id="servicios"><div class="wrap">
   <span class="eyebrow">Sobre nosotras</span>
   <p class="big split-words" style="margin-top:30px">Somos las leonas de la limpieza. Cuidamos tu hogar con el mismo detalle con el que cuidaríamos el nuestro, para que tú recuperes lo más valioso: tu tiempo y tu tranquilidad.</p>
   <div class="feats">
@@ -324,7 +364,7 @@ h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 
   <div class="wrap"><div class="hgal-progress"><i></i></div></div>
 </section>
 
-<section class="pricing" id="precios"><div class="wrap">
+<section class="pricing lt" id="precios"><div class="wrap">
   <span class="eyebrow">Limpieza básica · por horas</span>
   <h2 class="title">Pagas solo <em class="gold">el tiempo</em><br>que necesitas.</h2>
   <div class="p-grid">
@@ -363,7 +403,7 @@ h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 
   </div>
 </div></section>
 
-<section class="ba"><div class="wrap">
+<section class="ba lt"><div class="wrap">
   <span class="eyebrow">Antes · Después</span>
   <h2 class="title">Desliza y mira <em class="gold">la diferencia.</em></h2>
   <div class="ba-box" id="ba">
@@ -390,7 +430,18 @@ h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 
   <div class="promo" style="transform:rotate(5deg)"><img src="img/3.webp" alt="Promoción limpieza profunda"></div>
 </div></section>
 
-<section class="steps" id="proceso"><div class="wrap">
+<section class="reviews" id="resenas">
+  <div class="wrap rv-top">
+    <div><span class="eyebrow">Reseñas</span><h2 class="title">Lo que dicen <em class="gold">nuestras clientas.</em></h2></div>
+    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+      <div class="rv-score" id="rvScore"><svg class="g-ic" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg><div><b id="rvAvg">5.0</b></div><div><div class="stars">★★★★★</div><small id="rvCount">Reseñas de Google</small></div></div>
+      <div class="rv-nav"><button aria-label="Anterior" data-d="-1">←</button><button aria-label="Siguiente" data-d="1">→</button></div>
+    </div>
+  </div>
+  <div class="rv-track" id="rvTrack"></div>
+</section>
+
+<section class="steps lt2" id="proceso"><div class="wrap">
   <span class="eyebrow">Cómo funciona</span>
   <h2 class="title">Reservar es <em class="gold">así de fácil.</em></h2>
   <div class="step-list">
@@ -533,6 +584,19 @@ gsap.from('.plan',{y:40,opacity:0,stagger:.08,duration:.9,ease:'power3.out',scro
 /* cta bg */
 gsap.to('.cta-bg',{scale:1,ease:'none',scrollTrigger:{trigger:'.cta',start:'top bottom',end:'bottom top',scrub:true}});
 
+
+/* reviews — agrega aquí reseñas REALES de clientas: {n:"Nombre",t:"hace 2 semanas",s:5,r:"Texto"} */
+const REVIEWS=[];
+const GICON=`<svg class="g-ic" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>`;
+(function(){
+  const tr=document.getElementById('rvTrack');
+  if(!REVIEWS.length){document.getElementById('rvScore').style.display='none'}
+  else{const avg=REVIEWS.reduce((a,r)=>a+r.s,0)/REVIEWS.length;document.getElementById('rvAvg').textContent=avg.toFixed(1);document.getElementById('rvCount').textContent=REVIEWS.length+' reseñas en Google'}
+  tr.innerHTML=REVIEWS.map(r=>`<div class="rv"><div class="rv-h"><div class="av">${r.n[0]}</div><div><b>${r.n}</b><small>${r.t}</small></div>${GICON}</div><div class="stars">${'★'.repeat(r.s)}</div><p>${r.r}</p></div>`).join('')
+   +`<div class="rv empty"><div class="stars">★★★★★</div><h3 style="font-family:var(--serif);font-size:1.6rem;line-height:1.1">¿Ya te atendimos?</h3><p>Cuéntanos cómo te fue. Tu opinión ayuda a otras familias a elegirnos.</p><a class="btn btn-gold" target="_blank" href="${waLink('Hola! Quiero dejar mi reseña sobre el servicio de Limpialion.')}">Dejar mi reseña</a></div>`;
+  document.querySelectorAll('.rv-nav button').forEach(b=>b.onclick=()=>tr.scrollBy({left:+b.dataset.d*380,behavior:'smooth'}));
+  gsap.from('.rv',{y:60,opacity:0,stagger:.1,duration:1,ease:'power3.out',scrollTrigger:{trigger:'#rvTrack',start:'top 85%'}});
+})();
 addEventListener('load',()=>ScrollTrigger.refresh());
 addEventListener('resize',()=>movePill(tabs.querySelector('.on')));
 </script>
