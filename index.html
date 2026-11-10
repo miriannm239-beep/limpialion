@@ -14,7 +14,7 @@
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <style>
 :root{
-  --ink:#0b0a08; --ink2:#15130f; --ink3:#1f1c16;
+  --ink:#2a2119; --ink2:#33281e; --ink3:#3d3125;
   --cream:#f6f1e7; --cream2:#ece4d3;
   --gold:#d4af5a; --gold2:#f3d98b; --gold3:#a8822f;
   --muted:#8f877a;
@@ -70,13 +70,13 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between}
 
 /* hero */
 .hero{position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:flex-end}
-.hero-bg{position:absolute;inset:-6%;background:#1a1712 center/cover no-repeat;background-image:url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2400&q=80);transform:scale(1.15)}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(11,10,8,.55) 0%,rgba(11,10,8,.25) 40%,rgba(11,10,8,.92) 100%),radial-gradient(ellipse at 20% 80%,rgba(11,10,8,.8),transparent 60%)}
+.hero-bg{position:absolute;inset:-6%;background:#1a1712 center/cover no-repeat;background-image:url(https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=2400&q=80);transform:scale(1.15)}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(42,33,25,.45) 0%,rgba(42,33,25,.15) 35%,rgba(42,33,25,.85) 100%),linear-gradient(90deg,rgba(42,33,25,.7),transparent 65%)}
 .hero .wrap{position:relative;z-index:2;padding-bottom:9vh}
 .hero{padding-top:110px}
 .hero-logo{width:auto;height:clamp(110px,22vh,230px);margin-bottom:22px;filter:drop-shadow(0 10px 30px rgba(0,0,0,.6))}
 .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,min(11vw,13vh),10.5rem);line-height:.9;letter-spacing:-.035em}
-.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln{display:block;overflow:visible;padding-bottom:.06em}
 .hero h1 .ln span{display:inline-block}
 .hero h1 em{font-style:italic;font-weight:300}
 .hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-top:min(40px,4vh);flex-wrap:wrap}
@@ -545,7 +545,7 @@ const tl=gsap.timeline();
 tl.to('#loader .bar i',{width:'100%',duration:1.1,ease:'power2.inOut'})
   .to('#loader',{yPercent:-100,duration:1,ease:'power4.inOut'})
   .to('.hero-bg',{scale:1,duration:2.4,ease:'power3.out'},'-=.6')
-  .from('.hero h1 .ln span',{yPercent:110,rotate:4,duration:1.2,stagger:.12,ease:'power4.out'},'-=2')
+  .from(splitChars(document.querySelector('.hero h1')),{y:()=>gsap.utils.random(-160,160),x:()=>gsap.utils.random(-60,60),rotate:()=>gsap.utils.random(-45,45),opacity:0,duration:1.3,stagger:{each:.03,from:'random'},ease:'expo.out'},'-=2')
   .from('.h-fade',{y:30,opacity:0,filter:'blur(8px)',stagger:.12,duration:1,ease:'power3.out'},'-=.9')
   .from('#nav',{y:-40,opacity:0,duration:.8},'-=.8')
   .add(()=>movePill(tabs.querySelector('.on')));
@@ -562,7 +562,32 @@ gsap.to('.split-words .w',{opacity:1,stagger:.05,ease:'none',scrollTrigger:{trig
 gsap.from('.feat',{y:60,opacity:0,stagger:.12,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.feats',start:'top 85%'}});
 
 /* titles */
-document.querySelectorAll('h2.title,.cta h2').forEach(t=>gsap.from(t,{y:70,opacity:0,skewY:3,filter:'blur(10px)',duration:1.3,ease:'power4.out',scrollTrigger:{trigger:t,start:'top 88%'}}));
+function splitChars(el){
+  const walk=n=>{[...n.childNodes].forEach(c=>{
+    if(c.nodeType===3){const f=document.createDocumentFragment();
+      c.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){f.appendChild(document.createTextNode(w));return}
+        const ws=document.createElement('span');ws.style.cssText='display:inline-block;white-space:nowrap';
+        [...w].forEach(ch=>{const sp=document.createElement('span');sp.className='ch';sp.textContent=ch;sp.style.display='inline-block';ws.appendChild(sp)});f.appendChild(ws)});
+      c.replaceWith(f)}
+    else if(c.nodeType===1&&c.tagName!=='BR')walk(c)})};
+  walk(el);return el.querySelectorAll('.ch');
+}
+const FX=[
+  {x:()=>gsap.utils.random(-120,120),y:()=>gsap.utils.random(-80,80),rotate:()=>gsap.utils.random(-90,90),opacity:0},
+  {y:'110%',rotateX:-90,opacity:0},
+  {x:-80,opacity:0,filter:'blur(12px)'},
+  {x:80,opacity:0,skewX:-30},
+  {scale:0,opacity:0,y:40}
+];
+document.querySelectorAll('h2.title,.cta h2').forEach((t,i)=>{
+  const ch=splitChars(t);t.style.perspective='800px';
+  gsap.from(ch,{...FX[i%FX.length],duration:1.1,ease:'back.out(1.6)',stagger:{each:.025,from:i%2?'end':'start'},scrollTrigger:{trigger:t,start:'top 88%'}});
+});
+/* paragraphs & cards slide in alternating sides */
+document.querySelectorAll('.p-lead,.deep-top p,.deep-box,.rv-score,.more-q').forEach((el,i)=>gsap.from(el,{x:i%2?90:-90,opacity:0,duration:1.2,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 90%'}}));
+document.querySelectorAll('.step').forEach((el,i)=>gsap.from(el,{x:i%2?-140:140,opacity:0,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 92%'}}));
+gsap.from('.feat .ic',{scale:0,rotate:-180,duration:1,ease:'back.out(2)',stagger:.12,scrollTrigger:{trigger:'.feats',start:'top 85%'}});
+document.querySelectorAll('.eyebrow').forEach(e=>gsap.from(e,{letterSpacing:'1.2em',opacity:0,duration:1.4,ease:'expo.out',scrollTrigger:{trigger:e,start:'top 92%'}}));
 document.querySelectorAll('.up').forEach(t=>gsap.from(t,{y:50,opacity:0,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:t,start:'top 88%'}}));
 
 /* horizontal gallery */
