@@ -332,6 +332,37 @@ section,header,footer,.marq{overflow-x:clip}
   .hero-foot p{font-size:.95rem}
   .hero-ctas .btn{padding:13px 20px}
 }
+
+/* ===== incluye ===== */
+.incl{padding:clamp(90px,12vw,160px) 0;background:linear-gradient(180deg,#fffdf9,#f6efe2);color:#1b1813}
+.incl .eyebrow{color:var(--gold3)}.incl .eyebrow::before{background:var(--gold3)}
+.incl .gold,.incl .gold .ch{background-image:linear-gradient(120deg,#8a6a22,#c89b3c 45%,#a8822f 70%,#7a5c1c)}
+.inc-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;margin-top:56px;align-items:start}
+.inc-card{border-radius:28px;padding:clamp(24px,3.5vw,40px);position:relative;overflow:hidden}
+.inc-card.yes{background:#fff;border:1px solid #ece3d0;box-shadow:0 40px 80px -50px rgba(60,40,10,.45)}
+.inc-card.nope{background:var(--ink);color:var(--cream)}
+.inc-card.nope::before{content:"";position:absolute;width:320px;height:320px;right:-140px;top:-140px;border-radius:50%;background:radial-gradient(circle,rgba(232,71,95,.22),transparent 70%)}
+.inc-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;position:relative}
+.inc-tag{font-family:var(--serif);font-weight:700;font-size:1.7rem;letter-spacing:-.03em}
+.inc-n{font-family:var(--serif);font-weight:800;font-size:.85rem;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--grad);color:var(--ink)}
+.nope .inc-n{background:linear-gradient(120deg,#b3122e,#e8475f);color:#fff}
+.inc-card ul{list-style:none;display:grid;gap:4px;position:relative}
+.yes .inc-i{display:flex;gap:16px;padding:14px 12px;border-radius:16px;transition:background .3s,transform .3s}
+.yes .inc-i:hover{background:#fbf5ea;transform:translateX(6px)}
+.inc-i b{display:block;font-size:1rem;margin-bottom:3px}
+.inc-i p{color:#6f665a;font-size:.9rem;line-height:1.55}
+.ok,.no{flex:0 0 32px;height:32px;border-radius:10px;display:grid;place-items:center}
+.ok{background:linear-gradient(135deg,#f3d98b,#c89b3c)}
+.no{background:rgba(232,71,95,.15);border:1px solid rgba(232,71,95,.35)}
+.ok svg,.no svg{width:18px;height:18px;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.ok svg{stroke:#2a2119}.no svg{stroke:#ff8a9a}
+.ok svg path{stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .6s .2s ease}
+.inc-i.on .ok svg path{stroke-dashoffset:0}
+.nope .inc-i{display:flex;gap:14px;align-items:center;padding:9px 6px;border-bottom:1px solid rgba(243,217,139,.08);font-size:.92rem;color:#e6dccb}
+.nope .no{flex-basis:28px;height:28px}
+.inc-note{position:relative;margin-top:22px;font-size:.9rem;color:#cfc6b5}
+.inc-note a{color:var(--gold2);font-weight:700;border-bottom:1px solid currentColor}
+@media(max-width:900px){.inc-grid{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -348,7 +379,7 @@ section,header,footer,.marq{overflow-x:clip}
     <img src="img/logo-lion.png" alt="" style="height:50px;width:auto">
     <img src="img/logo-text.png" alt="Limpialion · Leonas en limpieza" style="height:34px;width:auto">
   </a>
-  <div class="links"><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#profunda">Limpieza profunda</a><a href="#resenas">Reseñas</a><a href="#proceso">Cómo funciona</a></div>
+  <div class="links"><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#incluye">Qué incluye</a><a href="#profunda">Limpieza profunda</a><a href="#resenas">Reseñas</a><a href="#proceso">Cómo funciona</a></div>
   <a class="btn btn-gold" data-wa href="#">Reservar</a>
 </div></nav>
 
@@ -425,6 +456,16 @@ section,header,footer,.marq{overflow-x:clip}
       </div>
       <a class="btn btn-gold" id="calcWa" href="#">Reservar este paquete</a>
     </div>
+  </div>
+</div></section>
+
+<section class="incl" id="incluye"><div class="wrap">
+  <span class="eyebrow">Limpieza a domicilio por horas</span>
+  <h2 class="title">¿Qué incluye <em class="gold">el servicio?</em></h2>
+  <div class="inc-grid">
+    <div class="inc-card yes"><div class="inc-h"><span class="inc-tag">Incluye</span><span class="inc-n">8</span></div><ul><li class="inc-i"><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Pisos</b><p>Barrido, aspirado, encerado o trapeo según el material del suelo.</p></div></li><li class="inc-i"><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Ventanas</b><p>Por dentro y fuera solo en el 1er piso; del 2do piso en adelante, solo por dentro.</p></div></li><li class="inc-i"><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Todos los ambientes</b><p>Baños, cocina, habitaciones, sala, comedor, lavandería y otros ambientes de forma general.</p></div></li><li class="inc-i"><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Cocina</b><p>Lavado de utensilios de cocina y vajilla.</p></div></li><li class="inc-i"><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Superficies y muebles</b><p>Desinfección y desempolvamiento superficial de superficies, muebles y pisos.</p></div></li><li class="inc-i"><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Orden al terminar</b><p>Lavamos y ordenamos los elementos y herramientas de limpieza usados en el servicio.</p></div></li><li class="inc-i"><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>General o profunda</b><p>La limpieza es general y superficial; puede ser profunda si lo solicitas, siempre dentro de las horas contratadas.</p></div></li><li class="inc-i"><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Tu privacidad</b><p>Solo abrimos cajones, cajas o armarios con tu consentimiento y supervisión.</p></div></li></ul></div>
+    <div class="inc-card nope"><div class="inc-h"><span class="inc-tag">No incluye</span><span class="inc-n">14</span></div><ul><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Realizar compras o llevar cosas de una dirección a otra</span></li><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Lavar ropa o textiles</span></li><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Cocinar</span></li><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Cuidar bebés, niños, adultos mayores o mascotas</span></li><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Bañar o pasear mascotas</span></li><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Mover muebles pesados sin ayuda</span></li><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Fumigación ni desratización</span></li><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Quedarse encerrada con llave</span></li><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Jardinería</span></li><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Limpieza de piscinas</span></li><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Subir y bajar escaleras de forma constante</span></li><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Actividades con riesgo de resbalones o caídas</span></li><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Actividades que pongan en riesgo a nuestro personal Lion</span></li><li class="inc-i"><span class="no"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>Arreglar artefactos</span></li></ul>
+      <p class="inc-note">¿Tienes una necesidad especial? <a data-wa data-msg="Hola! Tengo una consulta sobre lo que incluye el servicio." href="#">Consúltanos por WhatsApp →</a></p></div>
   </div>
 </div></section>
 
@@ -700,6 +741,11 @@ const GICON=`<svg class="g-ic" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6
   document.querySelectorAll('.rv-nav button').forEach(b=>b.onclick=()=>tr.scrollBy({left:+b.dataset.d*380,behavior:'smooth'}));
   gsap.from('.rv',{y:60,opacity:0,stagger:.1,duration:1,ease:'power3.out',scrollTrigger:{trigger:'#rvTrack',start:'top 85%'}});
 })();
+
+/* incluye: items cascade in, checks draw themselves */
+gsap.from('.yes .inc-i',{x:-60,opacity:0,stagger:.08,duration:.9,ease:'expo.out',scrollTrigger:{trigger:'.inc-grid',start:'top 80%',onEnter:()=>document.querySelectorAll('.yes .inc-i').forEach((li,i)=>setTimeout(()=>li.classList.add('on'),i*80+200))}});
+gsap.from('.nope .inc-i',{x:60,opacity:0,stagger:.05,duration:.8,ease:'expo.out',scrollTrigger:{trigger:'.inc-grid',start:'top 80%'}});
+gsap.from('.inc-card',{y:80,opacity:0,stagger:.2,duration:1.2,ease:'expo.out',scrollTrigger:{trigger:'.inc-grid',start:'top 88%'}});
 addEventListener('load',()=>ScrollTrigger.refresh());
 addEventListener('resize',()=>movePill(tabs.querySelector('.on')));
 </script>
