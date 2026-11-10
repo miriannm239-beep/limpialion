@@ -199,7 +199,7 @@ section{position:relative}
 .stat{padding:40px 20px 0;border-right:1px solid rgba(212,175,90,.15)}
 .stat:last-child{border:0}
 .stat b{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,5vw,4.4rem);display:block;line-height:1}
-.stat span{color:var(--muted);font-size:.85rem;margin-top:10px;display:block}
+.stat>span{color:var(--muted);font-size:.85rem;margin-top:10px;display:block}
 @media(max-width:800px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border:0}}
 
 /* promos */
@@ -258,7 +258,7 @@ h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 
 .lt .feats{background:#efe6d3;border-color:#efe6d3}
 .lt .feat{background:#fffdf9}.lt .feat:hover{background:#fbf5ea}
 .lt .feat .ic{background:#fbf3e2;border-color:#ead9b4}.lt .feat svg{stroke:var(--gold3)}
-.lt .feat p,.lt .stat span,.lt2 .step p{color:#6f665a}
+.lt .feat p,.lt .stat>span,.lt2 .step p{color:#6f665a}
 .lt .p-lead p{color:#5c5446}.lt .p-from small{color:#8f877a}
 .lt .p-note{color:#4a4338;background:#fbf3e2}
 .lt .stats{border-color:#ece3d0}.lt .stat{border-color:#ece3d0}
@@ -299,7 +299,7 @@ h2.title,.hero h1,.cta h2{letter-spacing:-.045em;font-variation-settings:"opsz" 
 .more-q a{color:var(--gold3);font-weight:700;border-bottom:1px solid currentColor}
 .plan.quote{background:linear-gradient(160deg,#c89b3c,#f3d98b);border:0;color:var(--ink)}
 .plan.quote .d{color:#4a3c1c}
-.gold span{background-image:inherit;background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+.gold .ch{background-image:inherit;background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
