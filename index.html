@@ -406,6 +406,22 @@ nav .btn::after{flex-basis:32px;height:32px}
 .fb-go{padding:12px 22px;border-radius:100px;background:var(--grad);color:#2a2119;font-weight:700;font-size:.9rem}
 .fb-mini{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(243,217,139,.35);transition:background .3s,transform .3s}
 .fb-mini:hover{background:#1877f2;border-color:#1877f2;transform:translateY(-3px)}
+
+/* ===== fine elegant buttons ===== */
+.btn{min-height:46px;padding:6px 6px 6px 22px;font-weight:500;font-size:.88rem;letter-spacing:.04em;gap:14px}
+.btn::after{flex-basis:30px;height:30px;background-size:13px}
+.btn-gold{background:linear-gradient(120deg,#d9b56a,#f1dca3 50%,#d6b066);box-shadow:0 8px 22px -14px rgba(200,155,60,.8),inset 0 1px 0 rgba(255,255,255,.55)}
+.btn-gold::before{opacity:.5}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(200,155,60,.9)}
+.btn-line{background:rgba(255,255,255,.04);border:1px solid rgba(243,217,139,.45);color:#f4ead6}
+.btn-line::after{background-color:transparent;border:1px solid rgba(243,217,139,.6);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f3d98b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M9 7h8v8'/%3E%3C/svg%3E")}
+.btn svg{width:17px;height:17px}
+nav .btn{min-height:40px;padding:4px 4px 4px 16px;font-size:.8rem}
+nav .btn::after{flex-basis:30px;height:30px}
+@media(max-width:700px){
+  .hero-ctas .btn{min-height:50px;font-size:.92rem;padding:6px 6px 6px 22px!important}
+  nav .btn{font-size:.78rem}
+}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
