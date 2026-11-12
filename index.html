@@ -494,7 +494,8 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
 .ws img{display:block;width:100%;aspect-ratio:576/952;object-fit:cover;object-position:top;border-radius:26px}
 .ws figcaption{text-align:center;padding:14px 6px 6px;color:#cfc6b5;font-size:.8rem}
 .ws figcaption b{display:block;color:#f3d98b;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:2px}
-@media(max-width:1000px){.ws-row{grid-template-columns:1fr 1fr;max-width:none;gap:14px}.ws:nth-child(even){transform:translateY(30px)}.ws{border-radius:24px;padding:6px}.ws img{border-radius:19px}.ws-n{width:44px;height:12px;top:10px}.ws figcaption{font-size:.7rem}}
+@media(max-width:1000px){.ws-row{display:flex;max-width:none;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:-16px;margin-right:-16px;padding:0 16px 20px;scrollbar-width:none}.ws-row::-webkit-scrollbar{display:none}.ws{flex:0 0 78%;scroll-snap-align:center}.ws:nth-child(even){transform:none}}
+.ws-hint{display:none;text-align:center;color:#8f877a;font-size:.8rem;margin-top:6px}@media(max-width:1000px){.ws-hint{display:block}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -679,7 +680,8 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
   <span class="eyebrow">Conversaciones reales</span>
   <h2 class="title">Clientas felices, <em class="gold">en sus propias palabras.</em></h2>
   <p class="rw-lead">Capturas reales de WhatsApp después de cada servicio. Ocultamos comprobantes y datos personales.</p>
-  <div class="wp-row ws-row"><figure class="ws"><div class="ws-n"></div><img src="img/wa-1.webp" alt="Conversación real de WhatsApp: Encantada con el servicio" loading="lazy"><figcaption><b>Cliente frecuente</b>Encantada con el servicio</figcaption></figure><figure class="ws"><div class="ws-n"></div><img src="img/wa-2.webp" alt="Conversación real de WhatsApp: Volvió a agendar" loading="lazy"><figcaption><b>Cliente frecuente</b>Volvió a agendar</figcaption></figure><figure class="ws"><div class="ws-n"></div><img src="img/wa-3.webp" alt="Conversación real de WhatsApp: Volverá a contratarnos" loading="lazy"><figcaption><b>Clienta satisfecha</b>Volverá a contratarnos</figcaption></figure><figure class="ws"><div class="ws-n"></div><img src="img/wa-4.webp" alt="Conversación real de WhatsApp: Confió desde el primer día" loading="lazy"><figcaption><b>Nuevo cliente</b>Confió desde el primer día</figcaption></figure></div>
+  <div class="wp-row ws-row" id="wsRow"><figure class="ws"><div class="ws-n"></div><img src="img/wa-1.webp" alt="Conversación real de WhatsApp: Encantada con el servicio" loading="lazy"><figcaption><b>Cliente frecuente</b>Encantada con el servicio</figcaption></figure><figure class="ws"><div class="ws-n"></div><img src="img/wa-2.webp" alt="Conversación real de WhatsApp: Volvió a agendar" loading="lazy"><figcaption><b>Cliente frecuente</b>Volvió a agendar</figcaption></figure><figure class="ws"><div class="ws-n"></div><img src="img/wa-3.webp" alt="Conversación real de WhatsApp: Volverá a contratarnos" loading="lazy"><figcaption><b>Clienta satisfecha</b>Volverá a contratarnos</figcaption></figure><figure class="ws"><div class="ws-n"></div><img src="img/wa-4.webp" alt="Conversación real de WhatsApp: Confió desde el primer día" loading="lazy"><figcaption><b>Nuevo cliente</b>Confió desde el primer día</figcaption></figure></div>
+  <p class="ws-hint">Desliza para ver más →</p>
 </div></section>
 
 <section class="reviews" id="resenas">
