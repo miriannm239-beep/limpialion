@@ -581,6 +581,29 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
 @keyframes incpr{0%{box-shadow:0 0 0 0 rgba(232,71,95,.5)}70%{box-shadow:0 0 0 12px rgba(232,71,95,0)}100%{box-shadow:0 0 0 0 rgba(232,71,95,0)}}
 .inc-h,.inc-card ul,.inc-note{position:relative;z-index:1}
 @media(max-width:600px){.inc-card.yes ul{grid-template-columns:1fr}.yes .inc-i{flex-direction:row;align-items:flex-start;padding:16px}.nope .inc-i{font-size:.84rem!important}}
+
+/* ===== menu movil ===== */
+.nav-r{display:flex;align-items:center;gap:10px}
+.burger{display:none;width:46px;height:46px;border-radius:14px;border:1px solid rgba(243,217,139,.35);background:rgba(18,14,10,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);cursor:pointer;position:relative;z-index:60}
+.burger i{position:absolute;left:13px;right:13px;height:1.6px;border-radius:2px;background:#f3ead9;transition:transform .5s cubic-bezier(.7,0,.2,1),opacity .3s,top .5s cubic-bezier(.7,0,.2,1)}
+.burger i:nth-child(1){top:16px}.burger i:nth-child(2){top:22px;right:19px}.burger i:nth-child(3){top:28px}
+.mopen .burger i:nth-child(1){top:22px;transform:rotate(45deg)}.mopen .burger i:nth-child(2){opacity:0}.mopen .burger i:nth-child(3){top:22px;transform:rotate(-45deg)}
+.mnu{position:fixed;inset:0;z-index:49;background:radial-gradient(120% 70% at 100% 0%,#3a2c1c 0%,#14100c 60%);clip-path:circle(0 at calc(100% - 44px) 44px);transition:clip-path .8s cubic-bezier(.7,0,.2,1);visibility:hidden}
+.mopen .mnu{clip-path:circle(150% at calc(100% - 44px) 44px);visibility:visible}
+.mnu-in{height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:110px 24px 34px;overflow:auto}
+.mnu-l{display:flex;flex-direction:column}
+.mnu-l a{display:flex;align-items:baseline;gap:16px;padding:13px 0;border-bottom:1px solid rgba(243,217,139,.12);font-family:var(--serif);font-size:1.7rem;color:#f3ead9;letter-spacing:-.02em;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1),color .3s}
+.mnu-l a span{font-family:var(--sans);font-size:.7rem;letter-spacing:.15em;color:var(--gold)}
+.mnu-l a:hover{color:var(--gold2)}
+.mopen .mnu-l a{opacity:1;transform:none}
+.mopen .mnu-l a:nth-child(1){transition-delay:.25s}.mopen .mnu-l a:nth-child(2){transition-delay:.3s}.mopen .mnu-l a:nth-child(3){transition-delay:.35s}.mopen .mnu-l a:nth-child(4){transition-delay:.4s}.mopen .mnu-l a:nth-child(5){transition-delay:.45s}.mopen .mnu-l a:nth-child(6){transition-delay:.5s}.mopen .mnu-l a:nth-child(7){transition-delay:.55s}.mopen .mnu-l a:nth-child(8){transition-delay:.6s}
+.mnu-f{display:flex;flex-direction:column;gap:14px;margin-top:30px;opacity:0;transition:opacity .5s .65s}
+.mopen .mnu-f{opacity:1}
+.mnu-f .btn{justify-content:center;min-height:54px}
+.mnu-fb{text-align:center;font-size:.85rem;color:#cfc6b5}
+.mopen{overflow:hidden}
+@media(max-width:860px){.burger{display:block}}
+@media(min-width:861px){.mnu{display:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -598,8 +621,12 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
     <img src="img/logo-text.png" alt="Limpialion · Leonas en limpieza" style="height:34px;width:auto">
   </a>
   <div class="links"><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#incluye">Qué incluye</a><a href="#profunda">Limpieza profunda</a><a href="#clientes">Clientes</a><a href="#resenas">Reseñas</a><a href="#proceso">Cómo funciona</a></div>
-  <a class="btn btn-gold" data-wa href="#">Reservar</a>
+  <div class="nav-r"><a class="btn btn-gold" data-wa href="#">Reservar</a><button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i><i></i></button></div>
 </div></nav>
+<div class="mnu" id="mnu" aria-hidden="true"><div class="mnu-in">
+  <nav class="mnu-l"><a href="#servicios"><span>01</span>Servicios</a><a href="#precios"><span>02</span>Precios</a><a href="#incluye"><span>03</span>Qué incluye</a><a href="#profunda"><span>04</span>Limpieza profunda</a><a href="#trabajos"><span>05</span>Trabajos reales</a><a href="#clientes"><span>06</span>Clientes</a><a href="#distritos"><span>07</span>Distritos</a><a href="#faq"><span>08</span>Preguntas frecuentes</a></nav>
+  <div class="mnu-f"><a class="btn btn-gold" data-wa href="#">Reserva por WhatsApp</a><a class="mnu-fb" href="https://www.facebook.com/share/19UaeX16dN/" target="_blank" rel="noopener">Síguenos en Facebook</a></div>
+</div></div>
 
 <header class="hero">
   <div class="hero-bg"></div>
@@ -1031,6 +1058,11 @@ gsap.set('.nope .inc-i',{opacity:0});
 document.querySelectorAll('.inc-n').forEach(n=>{const T=+n.textContent;n.textContent='0';ScrollTrigger.create({trigger:n,start:'top 90%',once:true,onEnter:()=>{const o={v:0};gsap.to(o,{v:T,duration:1.4,ease:'power2.out',onUpdate:()=>n.textContent=Math.round(o.v)})}})});
 if(matchMedia('(hover:hover)').matches)document.querySelectorAll('.inc-card').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
 })();
+/* menu movil */
+(()=>{const b=document.getElementById('burger'),m=document.getElementById('mnu');if(!b)return;const R=document.documentElement;
+const t=o=>{R.classList.toggle('mopen',o);b.setAttribute('aria-expanded',o);m.setAttribute('aria-hidden',!o);try{o?lenis.stop():lenis.start()}catch(e){}};
+b.addEventListener('click',()=>t(!R.classList.contains('mopen')));
+m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{t(false);const h=a.getAttribute('href');if(h&&h.length>1&&h[0]=='#')setTimeout(()=>{try{lenis.scrollTo(h,{offset:-60})}catch(e){}},80)}));})();
 addEventListener('load',()=>ScrollTrigger.refresh());
 addEventListener('resize',()=>movePill(tabs.querySelector('.on')));
 </script>
