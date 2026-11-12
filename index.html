@@ -183,7 +183,8 @@ section{position:relative}
 .ba{padding:clamp(100px,14vw,180px) 0}
 .ba-box{position:relative;margin-top:60px;border-radius:28px;overflow:hidden;aspect-ratio:16/8;user-select:none;touch-action:pan-y;background:#222}
 .ba-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ba-box .before{filter:sepia(.5) saturate(.5) brightness(.6) contrast(.9) blur(.6px)}
+.ba-box .before{filter:none}
+.ba-box{aspect-ratio:3/4!important;max-width:720px;margin-left:auto;margin-right:auto}
 .ba-box .after-w{position:absolute;inset:0;clip-path:inset(0 0 0 50%)}
 .ba-h{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--gold2);transform:translateX(-50%)}
 .ba-h i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--grad);display:grid;place-items:center;box-shadow:0 10px 40px rgba(0,0,0,.4);cursor:ew-resize}
@@ -567,8 +568,8 @@ nav .btn::after{flex:0 0 14px;width:14px;height:14px}
   <span class="eyebrow">Antes · Después</span>
   <h2 class="title">Desliza y mira <em class="gold">la diferencia.</em></h2>
   <div class="ba-box" id="ba">
-    <img class="before" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=2000&q=80" alt="Antes">
-    <div class="after-w"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=2000&q=80" alt="Después"></div>
+    <img class="before" src="img/sala-antes.webp" alt="Sala antes de la limpieza">
+    <div class="after-w"><img src="img/sala-despues.webp" alt="Sala después de la limpieza"></div>
     <span class="ba-lbl" style="left:22px">Antes</span><span class="ba-lbl" style="right:22px">Después</span>
     <div class="ba-h"><i><svg viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></i></div>
   </div>
