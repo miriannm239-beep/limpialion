@@ -496,6 +496,23 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
 .ws figcaption b{display:block;color:#f3d98b;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:2px}
 @media(max-width:1000px){.ws-row{display:flex;max-width:none;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:-16px;margin-right:-16px;padding:0 16px 20px;scrollbar-width:none}.ws-row::-webkit-scrollbar{display:none}.ws{flex:0 0 78%;scroll-snap-align:center}.ws:nth-child(even){transform:none}}
 .ws-hint{display:none;text-align:center;color:#8f877a;font-size:.8rem;margin-top:6px}@media(max-width:1000px){.ws-hint{display:block}}
+
+/* ===== nota de voz ===== */
+.vn{display:flex;align-items:center;gap:14px;max-width:460px;margin:26px auto 34px;padding:12px 18px 12px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(243,217,139,.25);backdrop-filter:blur(10px);box-shadow:0 30px 60px -40px rgba(0,0,0,.8)}
+.vn-b{flex:none;width:52px;height:52px;border-radius:50%;border:0;cursor:pointer;background:#f7f1e6;display:grid;place-items:center;position:relative;transition:transform .3s}
+.vn-b:hover{transform:scale(1.06)}
+.vn-b svg{width:22px;height:22px;fill:#2a2119}.vn-b .i-pause{display:none}
+.vn.on .vn-b .i-play{display:none}.vn.on .vn-b .i-pause{display:block}
+.vn-b::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(243,217,139,.6);animation:vnp 2s infinite}
+.vn.on .vn-b::after{animation:none;opacity:0}
+@keyframes vnp{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.35);opacity:0}}
+.vn-m{flex:1;min-width:0}
+.vn-m b{display:block;font-size:.85rem;color:#f3ead9;font-weight:600;margin-bottom:6px}.vn-m b span{color:#f3d98b;font-weight:400}
+.vn-w{display:flex;align-items:center;gap:3px;height:28px;cursor:pointer}
+.vn-w i{flex:1;height:calc(var(--h)*1%);border-radius:3px;background:rgba(243,234,217,.28);transition:background .2s}
+.vn-w i.p{background:#f3d98b}
+.vn.on .vn-w i.p:last-of-type{animation:none}
+.vn-t{flex:none;font-size:.8rem;color:#cfc6b5;font-variant-numeric:tabular-nums}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -680,6 +697,11 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
   <span class="eyebrow">Conversaciones reales</span>
   <h2 class="title">Clientas felices, <em class="gold">en sus propias palabras.</em></h2>
   <p class="rw-lead">Capturas reales de WhatsApp de nuestras clientas, tal cual nos escribieron.</p>
+  <div class="vn" id="vn"><audio id="vnA" src="audio/bienvenida.mp3" preload="metadata"></audio>
+    <button class="vn-b" id="vnB" aria-label="Reproducir mensaje de bienvenida"><svg class="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg><svg class="i-pause" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></button>
+    <div class="vn-m"><b>Escucha a Diana <span>· Limpia Lion</span></b><div class="vn-w" id="vnW"><i style="--h:30"></i><i style="--h:55"></i><i style="--h:80"></i><i style="--h:45"></i><i style="--h:95"></i><i style="--h:60"></i><i style="--h:35"></i><i style="--h:70"></i><i style="--h:100"></i><i style="--h:50"></i><i style="--h:75"></i><i style="--h:40"></i><i style="--h:90"></i><i style="--h:55"></i><i style="--h:30"></i><i style="--h:65"></i><i style="--h:85"></i><i style="--h:45"></i><i style="--h:70"></i><i style="--h:35"></i><i style="--h:60"></i><i style="--h:95"></i><i style="--h:50"></i><i style="--h:40"></i><i style="--h:75"></i><i style="--h:55"></i><i style="--h:30"></i><i style="--h:65"></i></div></div>
+    <span class="vn-t" id="vnT">0:00</span>
+  </div>
   <div class="wp-row ws-row" id="wsRow"><figure class="ws"><div class="ws-n"></div><img src="img/wa-1.webp" alt="Conversación real de WhatsApp: Encantada con el servicio" loading="lazy"><figcaption><b>Cliente frecuente</b>Encantada con el servicio</figcaption></figure><figure class="ws"><div class="ws-n"></div><img src="img/wa-2.webp" alt="Conversación real de WhatsApp: Volvió a agendar" loading="lazy"><figcaption><b>Cliente frecuente</b>Volvió a agendar</figcaption></figure><figure class="ws"><div class="ws-n"></div><img src="img/wa-3.webp" alt="Conversación real de WhatsApp: Volverá a contratarnos" loading="lazy"><figcaption><b>Clienta satisfecha</b>Volverá a contratarnos</figcaption></figure><figure class="ws"><div class="ws-n"></div><img src="img/wa-5.webp" alt="Captura real: pago por Yape de S/140 por servicio de limpieza" loading="lazy"><figcaption><b>Pago confirmado</b>Yape S/140 · Servicio de limpieza</figcaption></figure><figure class="ws"><div class="ws-n"></div><img src="img/wa-4.webp" alt="Conversación real de WhatsApp: Confió desde el primer día" loading="lazy"><figcaption><b>Nuevo cliente</b>Confió desde el primer día</figcaption></figure></div>
   <p class="ws-hint">Desliza para ver más →</p>
 </div></section>
@@ -924,6 +946,13 @@ gsap.utils.toArray('.rw-i').forEach((el,i)=>gsap.fromTo(el.querySelector('img'),
 
 /* whatsapp reales: bubbles pop in */
 gsap.fromTo('.ws img',{opacity:0,y:40},{opacity:1,y:0,stagger:.12,duration:1,ease:'expo.out',clearProps:'transform',scrollTrigger:{trigger:'.ws-row',start:'top 85%'}});
+(()=>{const v=document.getElementById('vn');if(!v)return;const a=document.getElementById('vnA'),b=document.getElementById('vnB'),w=document.getElementById('vnW'),t=document.getElementById('vnT'),bs=[...w.children];const f=x=>{x=Math.floor(x||0);return Math.floor(x/60)+':'+String(x%60).padStart(2,'0')};
+a.addEventListener('loadedmetadata',()=>t.textContent=f(a.duration));
+b.addEventListener('click',()=>a.paused?a.play():a.pause());
+a.addEventListener('play',()=>v.classList.add('on'));a.addEventListener('pause',()=>v.classList.remove('on'));
+a.addEventListener('ended',()=>{a.currentTime=0;bs.forEach(i=>i.classList.remove('p'));t.textContent=f(a.duration)});
+a.addEventListener('timeupdate',()=>{const r=a.currentTime/a.duration||0;bs.forEach((i,k)=>i.classList.toggle('p',k/bs.length<r));t.textContent=f(a.currentTime)});
+w.addEventListener('click',e=>{const r=w.getBoundingClientRect();if(a.duration){a.currentTime=(e.clientX-r.left)/r.width*a.duration;if(a.paused)a.play()}});})();
 addEventListener('load',()=>ScrollTrigger.refresh());
 addEventListener('resize',()=>movePill(tabs.querySelector('.on')));
 </script>
