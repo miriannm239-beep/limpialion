@@ -43,6 +43,17 @@ h2.title em{font-style:italic}
 #loader .bar i{display:block;height:100%;width:0;background:var(--grad)}
 #loader p{font-size:.7rem;letter-spacing:.4em;margin-top:14px;color:var(--muted)}
 
+/* before/after tabs */
+document.querySelectorAll('#baTabs button').forEach(b=>b.addEventListener('click',()=>{
+  if(b.classList.contains('on'))return;
+  document.querySelectorAll('#baTabs button').forEach(x=>x.classList.toggle('on',x===b));
+  const [a,d]=b.dataset.k.split('|'),im=ba.querySelectorAll('img');
+  ba.classList.add('swap');
+  setTimeout(()=>{im[0].src='img/'+a+'.webp';im[1].src='img/'+d+'.webp';im[0].alt=b.textContent+' antes';im[1].alt=b.textContent+' después';
+    aw.style.clipPath='inset(0 0 0 50%)';bh.style.left='50%';
+    Promise.all([...im].map(i=>i.decode().catch(()=>{}))).then(()=>ba.classList.remove('swap'))},350);
+}));
+
 /* cursor */
 .cur{position:fixed;top:0;left:0;width:36px;height:36px;border:1px solid var(--gold);border-radius:50%;pointer-events:none;z-index:90;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;mix-blend-mode:difference}
 .cur.big{width:80px;height:80px;background:rgba(212,175,90,.25)}
@@ -457,6 +468,14 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
 .rw-i figcaption{position:absolute;left:12px;right:12px;bottom:12px;padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:.85rem;color:#2a2119}
 .rw-i figcaption span{display:block;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:#8a6a22;font-weight:600;margin-bottom:2px}
 @media(max-width:800px){.rw-grid{grid-template-columns:1fr 1fr;gap:12px}.rw-i:nth-child(3n+2){transform:none}.rw-i:nth-child(even){transform:translateY(30px)}.rw-i figcaption{font-size:.72rem;padding:9px 11px;left:8px;right:8px;bottom:8px}}
+
+/* ===== before/after tabs ===== */
+.ba-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.ba-tabs button{font:500 .85rem var(--sans);padding:10px 18px;border-radius:100px;border:1px solid #e3d6bb;background:#fff;color:#2a2119;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.ba-tabs button.on{background:#2a2119;color:#f7f1e6;border-color:#2a2119}
+.ba-tabs + .ba-box{margin-top:22px}
+.ba-box img{transition:opacity .35s}
+.ba-box.swap img{opacity:0}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -582,6 +601,13 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
 <section class="ba lt"><div class="wrap">
   <span class="eyebrow">Antes · Después</span>
   <h2 class="title">Desliza y mira <em class="gold">la diferencia.</em></h2>
+  <div class="ba-tabs" id="baTabs">
+    <button class="on" data-k="sala-antes|sala-despues">Sala</button>
+    <button data-k="ba-cocina-antes|ba-cocina-despues">Cocina</button>
+    <button data-k="ba-bano-antes|ba-bano-despues">Baño</button>
+    <button data-k="ba-inodoro-antes|ba-inodoro-despues">Inodoro</button>
+    <button data-k="ba-mueble-antes|ba-mueble-despues">Bajo mueble</button>
+  </div>
   <div class="ba-box" id="ba">
     <img class="before" src="img/sala-antes.webp" alt="Sala antes de la limpieza">
     <div class="after-w"><img src="img/sala-despues.webp" alt="Sala después de la limpieza"></div>
