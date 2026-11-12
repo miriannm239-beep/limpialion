@@ -134,17 +134,17 @@ section{position:relative}
 .p-from b{font-family:var(--serif);font-weight:500;font-size:clamp(4rem,9vw,7.5rem);line-height:1}
 .p-note{margin-top:28px;padding:18px 22px;border-left:2px solid var(--gold);background:rgba(212,175,90,.06);font-size:.92rem;color:#d6cdbb;border-radius:0 12px 12px 0}
 .calc{background:linear-gradient(160deg,var(--ink3),var(--ink2));border:1px solid rgba(212,175,90,.2);border-radius:28px;padding:clamp(26px,4vw,44px);position:relative;overflow:hidden}
-.calc::before{content:"";position:absolute;width:300px;height:300px;right:-120px;top:-120px;background:radial-gradient(circle,rgba(243,217,139,.25),transparent 70%)}
+.calc::before{content:"";position:absolute;width:300px;height:300px;right:-120px;top:-120px;background:radial-gradient(circle,rgba(243,217,139,.25),transparent 70%);pointer-events:none;z-index:0}
 .calc h3{font-family:var(--serif);font-weight:400;font-size:1.6rem}
 .calc .sub{color:var(--muted);font-size:.85rem;margin-top:6px}
-.hours{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:28px 0}
+.hours{position:relative;z-index:2;display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:28px 0}
 .hours button{font-variant-numeric:tabular-nums;font:600 1rem var(--sans);padding:14px 0;border-radius:14px;border:1px solid rgba(212,175,90,.25);background:transparent;color:var(--cream);cursor:pointer;transition:all .35s}
 .hours button small{display:block;font-size:.6rem;font-weight:400;color:var(--muted);margin-top:2px}
 .hours button.on{background:var(--grad);color:var(--ink);border-color:transparent;transform:translateY(-3px);box-shadow:0 10px 30px -10px rgba(212,175,90,.6)}
 .hours button.on small{color:#4a3c1c}
 .hours button.on,.hours button.on:hover{color:#2a2119!important}
 .calc-out{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(212,175,90,.15);padding-top:24px;gap:16px;flex-wrap:wrap}
-.calc-out .price{font-variant-numeric:tabular-nums;font-family:var(--serif);font-size:clamp(3rem,6vw,4.4rem);font-weight:300;line-height:1}
+.calc-out .price{font-weight:500!important;letter-spacing:-.03em;font-variant-numeric:tabular-nums;font-family:var(--serif);font-size:clamp(3rem,6vw,4.4rem);font-weight:300;line-height:1}
 .calc-out .meta{color:var(--muted);font-size:.85rem;margin-top:8px}
 .calc .btn{margin-top:26px;width:100%;justify-content:center}
 @media(max-width:900px){.p-grid{grid-template-columns:1fr}.hours{grid-template-columns:repeat(3,1fr)}}
