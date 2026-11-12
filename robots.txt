@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /voces/
 
-Sitemap: https://limpialion.com/sitemap.xml
+Sitemap: https://www.limpialion.com/sitemap.xml
