@@ -465,6 +465,25 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
 .ba-tabs + .ba-box{margin-top:22px}
 .ba-box img{transition:opacity .35s}
 .ba-box.swap img{opacity:0}
+
+/* ===== whatsapp reales ===== */
+.wa-real{padding:clamp(80px,10vw,140px) 0;background:linear-gradient(180deg,#f6efe2,#fffdf9);color:#1b1813}
+.wa-real .eyebrow{color:var(--gold3)}.wa-real .eyebrow::before{background:var(--gold3)}
+.wa-real .gold{--gg:linear-gradient(120deg,#8a6a22,#c89b3c 45%,#a8822f 70%,#7a5c1c)}
+.wp-row{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:54px;align-items:start}
+.wp{border-radius:30px;overflow:hidden;background:#0b141a;border:8px solid #1d1a16;box-shadow:0 50px 90px -50px rgba(40,25,5,.7);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.wp:nth-child(2){transform:translateY(36px)}
+.wp:hover{transform:translateY(-8px) rotate(-.6deg)}
+.wp-h{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#1f2c34;color:#e9edef}
+.wp-av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font:500 1.05rem Roboto,Arial,sans-serif}
+.wp-h b{display:block;font-size:.95rem;font-weight:500}.wp-h small{color:#8696a0;font-size:.75rem}
+.wp-b{padding:18px 12px 22px;display:flex;flex-direction:column;gap:8px;min-height:360px;background:#0b141a radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/18px 18px}
+.wb{max-width:84%;padding:8px 10px 6px;border-radius:10px;font-size:.88rem;line-height:1.4;color:#e9edef;position:relative}
+.wb.in{background:#202c33;align-self:flex-start;border-top-left-radius:2px}
+.wb.out{background:#005c4b;align-self:flex-end;border-top-right-radius:2px}
+.wb span{display:flex;justify-content:flex-end;align-items:center;gap:3px;font-size:.66rem;color:rgba(233,237,239,.6);margin-top:2px}
+.wb svg{width:16px;height:11px}
+@media(max-width:900px){.wp-row{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}.wp:nth-child(2){transform:none}.wp-b{min-height:0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -481,7 +500,7 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
     <img src="img/logo-lion.png" alt="" style="height:50px;width:auto">
     <img src="img/logo-text.png" alt="Limpialion · Leonas en limpieza" style="height:34px;width:auto">
   </a>
-  <div class="links"><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#incluye">Qué incluye</a><a href="#profunda">Limpieza profunda</a><a href="#resenas">Reseñas</a><a href="#proceso">Cómo funciona</a></div>
+  <div class="links"><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#incluye">Qué incluye</a><a href="#profunda">Limpieza profunda</a><a href="#clientes">Clientes</a><a href="#resenas">Reseñas</a><a href="#proceso">Cómo funciona</a></div>
   <a class="btn btn-gold" data-wa href="#">Reservar</a>
 </div></nav>
 
@@ -644,6 +663,13 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
     <a class="btn btn-gold" data-wa data-msg="Hola! Quiero la promoción de limpieza profunda x2 / x3." href="#">Ver todas las horas</a>
   </div></div>
 </div></div></section>
+
+<section class="wa-real" id="clientes"><div class="wrap">
+  <span class="eyebrow">Conversaciones reales</span>
+  <h2 class="title">Clientas felices, <em class="gold">en sus propias palabras.</em></h2>
+  <p class="rw-lead">Mensajes reales que recibimos por WhatsApp después de cada servicio. Se omiten datos personales y comprobantes.</p>
+  <div class="wp-row"><div class="wp"><div class="wp-h"><div class="wp-av" style="background:#00897b">W</div><div><b>Hospedaje · Cliente frecuente</b><small>en línea</small></div></div><div class="wp-b"><div class="wb in"><p>Totalmente conforme y encantada con el servicio de la señora Yannith 💗</p><span>8:47 p. m.</span></div><div class="wb out"><p>Muchísimas gracias por preferir nuestro servicio. Valoramos mucho su confianza 😊</p><span>8:49 p. m.<svg viewBox="0 0 18 12"><path d="M1 6.5l3.2 3.2L11 2.5M6.8 9.7L7.6 10.5 15 3" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wb in"><p>Me agendas para el próximo sábado</p><span>1:47 p. m.</span></div><div class="wb in"><p>Excelente servicio 👌</p><span>1:47 p. m.</span></div><div class="wb out"><p>¡Claro que sí! Tendrá prioridad en la agenda este sábado</p><span>1:49 p. m.<svg viewBox="0 0 18 12"><path d="M1 6.5l3.2 3.2L11 2.5M6.8 9.7L7.6 10.5 15 3" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div><div class="wp"><div class="wp-h"><div class="wp-av" style="background:#e8710a">C</div><div><b>Carlos y Elena</b><small>en línea</small></div></div><div class="wp-b"><div class="wb out"><p>Muchas gracias por confiar en nuestro servicio de limpieza 😊 Nos alegra saber que quedó satisfecho con el trabajo.</p><span>3:11 p. m.<svg viewBox="0 0 18 12"><path d="M1 6.5l3.2 3.2L11 2.5M6.8 9.7L7.6 10.5 15 3" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wb in"><p>Muchas gracias, sí quedé satisfecha, todo limpio, me gustó su atención. En una semana y media aprox volveré a contratarlos 🙌</p><span>3:52 p. m.</span></div><div class="wb out"><p>¡Qué alegría saberlo! Quedo atenta a su próximo servicio 💕</p><span>4:00 p. m.<svg viewBox="0 0 18 12"><path d="M1 6.5l3.2 3.2L11 2.5M6.8 9.7L7.6 10.5 15 3" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div><div class="wp"><div class="wp-h"><div class="wp-av" style="background:#1a73e8">W</div><div><b>Wilmer</b><small>en línea</small></div></div><div class="wp-b"><div class="wb in"><p>Sra. Diana, ahí está el Yape. Si hacen un buen servicio de limpieza, voy a seguir contratándola 🤝</p><span>9:17 a. m.</span></div><div class="wb out"><p>Dejaremos su espacio limpio, ordenado y reluciente ✨</p><span>9:22 a. m.<svg viewBox="0 0 18 12"><path d="M1 6.5l3.2 3.2L11 2.5M6.8 9.7L7.6 10.5 15 3" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wb in"><p>Está bien</p><span>9:51 a. m.</span></div><div class="wb out"><p>Muchas gracias por confiar en nosotras. Cuando necesite una limpieza de mantenimiento o profunda, tendrá prioridad en la programación 😊</p><span>4:55 p. m.<svg viewBox="0 0 18 12"><path d="M1 6.5l3.2 3.2L11 2.5M6.8 9.7L7.6 10.5 15 3" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div></div>
+</div></section>
 
 <section class="reviews" id="resenas">
   <div class="wrap rv-top">
@@ -882,6 +908,9 @@ if(matchMedia('(hover:hover)').matches)document.querySelectorAll('.btn').forEach
 
 
 gsap.utils.toArray('.rw-i').forEach((el,i)=>gsap.fromTo(el.querySelector('img'),{scale:1.25,clipPath:'inset(100% 0 0 0)'},{scale:1,clipPath:'inset(0% 0 0 0)',duration:1.4,delay:(i%3)*.12,ease:'expo.out',clearProps:'clipPath',scrollTrigger:{trigger:el,start:'top 90%'}}));
+
+/* whatsapp reales: bubbles pop in */
+gsap.utils.toArray('.wp').forEach(w=>gsap.fromTo(w.querySelectorAll('.wb'),{y:20,opacity:0,scale:.92},{y:0,opacity:1,scale:1,stagger:.18,duration:.6,ease:'back.out(1.6)',clearProps:'transform',scrollTrigger:{trigger:w,start:'top 82%'}}));
 addEventListener('load',()=>ScrollTrigger.refresh());
 addEventListener('resize',()=>movePill(tabs.querySelector('.on')));
 </script>
