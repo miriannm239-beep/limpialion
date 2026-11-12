@@ -43,17 +43,6 @@ h2.title em{font-style:italic}
 #loader .bar i{display:block;height:100%;width:0;background:var(--grad)}
 #loader p{font-size:.7rem;letter-spacing:.4em;margin-top:14px;color:var(--muted)}
 
-/* before/after tabs */
-document.querySelectorAll('#baTabs button').forEach(b=>b.addEventListener('click',()=>{
-  if(b.classList.contains('on'))return;
-  document.querySelectorAll('#baTabs button').forEach(x=>x.classList.toggle('on',x===b));
-  const [a,d]=b.dataset.k.split('|'),im=ba.querySelectorAll('img');
-  ba.classList.add('swap');
-  setTimeout(()=>{im[0].src='img/'+a+'.webp';im[1].src='img/'+d+'.webp';im[0].alt=b.textContent+' antes';im[1].alt=b.textContent+' después';
-    aw.style.clipPath='inset(0 0 0 50%)';bh.style.left='50%';
-    Promise.all([...im].map(i=>i.decode().catch(()=>{}))).then(()=>ba.classList.remove('swap'))},350);
-}));
-
 /* cursor */
 .cur{position:fixed;top:0;left:0;width:36px;height:36px;border:1px solid var(--gold);border-radius:50%;pointer-events:none;z-index:90;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;mix-blend-mode:difference}
 .cur.big{width:80px;height:80px;background:rgba(212,175,90,.25)}
@@ -737,6 +726,17 @@ let drag=false;
 ba.addEventListener('pointerdown',e=>{drag=true;setBA(e.clientX)});
 addEventListener('pointerup',()=>drag=false);
 addEventListener('pointermove',e=>{if(drag)setBA(e.clientX)});
+/* before/after tabs */
+document.querySelectorAll('#baTabs button').forEach(b=>b.addEventListener('click',()=>{
+  if(b.classList.contains('on'))return;
+  document.querySelectorAll('#baTabs button').forEach(x=>x.classList.toggle('on',x===b));
+  const [a,d]=b.dataset.k.split('|'),im=ba.querySelectorAll('img');
+  ba.classList.add('swap');
+  setTimeout(()=>{im[0].src='img/'+a+'.webp';im[1].src='img/'+d+'.webp';im[0].alt=b.textContent+' antes';im[1].alt=b.textContent+' después';
+    aw.style.clipPath='inset(0 0 0 50%)';bh.style.left='50%';
+    Promise.all([...im].map(i=>i.decode().catch(()=>{}))).then(()=>ba.classList.remove('swap'))},350);
+}));
+
 
 /* cursor */
 const c=document.querySelector('.cur');
