@@ -920,7 +920,7 @@ const GICON=`<svg class="g-ic" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6
 (function(){
   const tr=document.getElementById('rvTrack');
   if(!REVIEWS.length){document.getElementById('rvScore').style.display='none'}
-  else{const avg=REVIEWS.reduce((a,r)=>a+r.s,0)/REVIEWS.length;document.getElementById('rvAvg').textContent=avg.toFixed(1);document.getElementById('rvCount').textContent='Reseñas de ejemplo'}
+  else{const avg=REVIEWS.reduce((a,r)=>a+r.s,0)/REVIEWS.length;const ea=document.getElementById('rvAvg'),ec=document.getElementById('rvCount');if(ea)ea.textContent=avg.toFixed(1);if(ec)ec.textContent='Reseñas de ejemplo'}
   const AVC=['#1a73e8','#e8710a','#188038','#d93025','#9334e6','#00897b','#c2185b'],AGO=['hace 1 semana','hace 2 semanas','hace 3 semanas','hace 1 mes','hace 1 mes'];
   tr.innerHTML=REVIEWS.map((r,i)=>`<div class="rv"><div class="rv-h"><div class="av" style="background:${AVC[i%AVC.length]}">${r.n[0]}</div><div><b>${r.n}</b><small>${r.t} · ${AGO[i%AGO.length]}</small></div></div><div class="stars">${'★'.repeat(r.s)}<span style="color:#dadce0">${'★'.repeat(5-r.s)}</span></div><p>${r.r}</p></div>`).join('')
    +`<div class="rv empty"><div class="stars">★★★★★</div><h3 style="font-family:var(--serif);font-size:1.6rem;line-height:1.1">¿Ya te atendimos?</h3><p>Cuéntanos cómo te fue. Tu opinión ayuda a otras familias a elegirnos.</p><a class="btn btn-gold" target="_blank" href="${waLink('Hola! Quiero dejar mi reseña sobre el servicio de Limpialion.')}">Dejar mi reseña</a></div>`;
