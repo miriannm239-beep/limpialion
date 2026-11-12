@@ -484,6 +484,17 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
 .wb span{display:flex;justify-content:flex-end;align-items:center;gap:3px;font-size:.66rem;color:rgba(233,237,239,.6);margin-top:2px}
 .wb svg{width:16px;height:11px}
 @media(max-width:900px){.wp-row{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}.wp:nth-child(2){transform:none}.wp-b{min-height:0}}
+
+/* ===== capturas reales ===== */
+.ws-row{grid-template-columns:repeat(4,1fr);gap:22px}
+.ws{position:relative;border-radius:34px;padding:10px;background:#1d1a16;box-shadow:0 50px 90px -50px rgba(40,25,5,.75),inset 0 0 0 1px rgba(255,255,255,.08);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.ws:nth-child(even){transform:translateY(40px)}
+.ws:hover{transform:translateY(-10px) rotate(-.8deg)}
+.ws-n{position:absolute;top:16px;left:50%;transform:translateX(-50%);width:70px;height:18px;border-radius:20px;background:#1d1a16;z-index:2}
+.ws img{display:block;width:100%;aspect-ratio:576/952;object-fit:cover;object-position:top;border-radius:26px}
+.ws figcaption{text-align:center;padding:14px 6px 6px;color:#cfc6b5;font-size:.8rem}
+.ws figcaption b{display:block;color:#f3d98b;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:2px}
+@media(max-width:1000px){.ws-row{grid-template-columns:1fr 1fr;max-width:none;gap:14px}.ws:nth-child(even){transform:translateY(30px)}.ws{border-radius:24px;padding:6px}.ws img{border-radius:19px}.ws-n{width:44px;height:12px;top:10px}.ws figcaption{font-size:.7rem}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -667,8 +678,8 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
 <section class="wa-real" id="clientes"><div class="wrap">
   <span class="eyebrow">Conversaciones reales</span>
   <h2 class="title">Clientas felices, <em class="gold">en sus propias palabras.</em></h2>
-  <p class="rw-lead">Mensajes reales que recibimos por WhatsApp después de cada servicio. Se omiten datos personales y comprobantes.</p>
-  <div class="wp-row"><div class="wp"><div class="wp-h"><div class="wp-av" style="background:#00897b">W</div><div><b>Hospedaje · Cliente frecuente</b><small>en línea</small></div></div><div class="wp-b"><div class="wb in"><p>Totalmente conforme y encantada con el servicio de la señora Yannith 💗</p><span>8:47 p. m.</span></div><div class="wb out"><p>Muchísimas gracias por preferir nuestro servicio. Valoramos mucho su confianza 😊</p><span>8:49 p. m.<svg viewBox="0 0 18 12"><path d="M1 6.5l3.2 3.2L11 2.5M6.8 9.7L7.6 10.5 15 3" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wb in"><p>Me agendas para el próximo sábado</p><span>1:47 p. m.</span></div><div class="wb in"><p>Excelente servicio 👌</p><span>1:47 p. m.</span></div><div class="wb out"><p>¡Claro que sí! Tendrá prioridad en la agenda este sábado</p><span>1:49 p. m.<svg viewBox="0 0 18 12"><path d="M1 6.5l3.2 3.2L11 2.5M6.8 9.7L7.6 10.5 15 3" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div><div class="wp"><div class="wp-h"><div class="wp-av" style="background:#e8710a">C</div><div><b>Carlos y Elena</b><small>en línea</small></div></div><div class="wp-b"><div class="wb out"><p>Muchas gracias por confiar en nuestro servicio de limpieza 😊 Nos alegra saber que quedó satisfecho con el trabajo.</p><span>3:11 p. m.<svg viewBox="0 0 18 12"><path d="M1 6.5l3.2 3.2L11 2.5M6.8 9.7L7.6 10.5 15 3" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wb in"><p>Muchas gracias, sí quedé satisfecha, todo limpio, me gustó su atención. En una semana y media aprox volveré a contratarlos 🙌</p><span>3:52 p. m.</span></div><div class="wb out"><p>¡Qué alegría saberlo! Quedo atenta a su próximo servicio 💕</p><span>4:00 p. m.<svg viewBox="0 0 18 12"><path d="M1 6.5l3.2 3.2L11 2.5M6.8 9.7L7.6 10.5 15 3" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div><div class="wp"><div class="wp-h"><div class="wp-av" style="background:#1a73e8">W</div><div><b>Wilmer</b><small>en línea</small></div></div><div class="wp-b"><div class="wb in"><p>Sra. Diana, ahí está el Yape. Si hacen un buen servicio de limpieza, voy a seguir contratándola 🤝</p><span>9:17 a. m.</span></div><div class="wb out"><p>Dejaremos su espacio limpio, ordenado y reluciente ✨</p><span>9:22 a. m.<svg viewBox="0 0 18 12"><path d="M1 6.5l3.2 3.2L11 2.5M6.8 9.7L7.6 10.5 15 3" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="wb in"><p>Está bien</p><span>9:51 a. m.</span></div><div class="wb out"><p>Muchas gracias por confiar en nosotras. Cuando necesite una limpieza de mantenimiento o profunda, tendrá prioridad en la programación 😊</p><span>4:55 p. m.<svg viewBox="0 0 18 12"><path d="M1 6.5l3.2 3.2L11 2.5M6.8 9.7L7.6 10.5 15 3" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div></div></div>
+  <p class="rw-lead">Capturas reales de WhatsApp después de cada servicio. Ocultamos comprobantes y datos personales.</p>
+  <div class="wp-row ws-row"><figure class="ws"><div class="ws-n"></div><img src="img/wa-1.webp" alt="Conversación real de WhatsApp: Encantada con el servicio" loading="lazy"><figcaption><b>Cliente frecuente</b>Encantada con el servicio</figcaption></figure><figure class="ws"><div class="ws-n"></div><img src="img/wa-2.webp" alt="Conversación real de WhatsApp: Volvió a agendar" loading="lazy"><figcaption><b>Cliente frecuente</b>Volvió a agendar</figcaption></figure><figure class="ws"><div class="ws-n"></div><img src="img/wa-3.webp" alt="Conversación real de WhatsApp: Volverá a contratarnos" loading="lazy"><figcaption><b>Clienta satisfecha</b>Volverá a contratarnos</figcaption></figure><figure class="ws"><div class="ws-n"></div><img src="img/wa-4.webp" alt="Conversación real de WhatsApp: Confió desde el primer día" loading="lazy"><figcaption><b>Nuevo cliente</b>Confió desde el primer día</figcaption></figure></div>
 </div></section>
 
 <section class="reviews" id="resenas">
@@ -910,7 +921,7 @@ if(matchMedia('(hover:hover)').matches)document.querySelectorAll('.btn').forEach
 gsap.utils.toArray('.rw-i').forEach((el,i)=>gsap.fromTo(el.querySelector('img'),{scale:1.25,clipPath:'inset(100% 0 0 0)'},{scale:1,clipPath:'inset(0% 0 0 0)',duration:1.4,delay:(i%3)*.12,ease:'expo.out',clearProps:'clipPath',scrollTrigger:{trigger:el,start:'top 90%'}}));
 
 /* whatsapp reales: bubbles pop in */
-gsap.utils.toArray('.wp').forEach(w=>gsap.fromTo(w.querySelectorAll('.wb'),{y:20,opacity:0,scale:.92},{y:0,opacity:1,scale:1,stagger:.18,duration:.6,ease:'back.out(1.6)',clearProps:'transform',scrollTrigger:{trigger:w,start:'top 82%'}}));
+gsap.fromTo('.ws img',{opacity:0,y:40},{opacity:1,y:0,stagger:.12,duration:1,ease:'expo.out',clearProps:'transform',scrollTrigger:{trigger:'.ws-row',start:'top 85%'}});
 addEventListener('load',()=>ScrollTrigger.refresh());
 addEventListener('resize',()=>movePill(tabs.querySelector('.on')));
 </script>
