@@ -521,6 +521,26 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
 @keyframes vnw{to{transform:scaleY(.55)}}
 .vn-t{flex:none;font-size:.78rem;color:#cfc6b5;font-variant-numeric:tabular-nums;position:relative}
 @media(max-width:700px){.hero-l{max-width:none;width:100%}.vn{margin-top:18px}}
+
+/* ===== distritos + faq ===== */
+.zf{padding:clamp(70px,10vw,120px) 0 40px}.zf2{padding-top:40px}
+.zd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.zd{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid rgba(243,217,139,.18);color:#f3ead9;text-decoration:none;transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .3s,background .3s}
+.zd:hover{transform:translateY(-4px);border-color:rgba(243,217,139,.55);background:rgba(243,217,139,.08)}
+.zd svg{flex:none;width:38px;height:38px;padding:9px;border-radius:12px;background:rgba(243,217,139,.12);stroke:var(--gold2);fill:none;stroke-width:1.6}
+.zd span{font-size:1.05rem;font-weight:500;line-height:1.2}.zd small{display:block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#a99f8d;font-weight:400;margin-bottom:3px}
+.fq-list{margin-top:36px;max-width:860px}
+.fq{border-bottom:1px solid rgba(243,217,139,.18)}
+.fq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-size:1.12rem;color:#f3ead9;font-weight:500}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary i{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid rgba(243,217,139,.4);position:relative;transition:transform .4s,background .3s}
+.fq summary i::before,.fq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--gold2);transform:translate(-50%,-50%)}
+.fq summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s}
+.fq[open] summary i{background:rgba(243,217,139,.15)}.fq[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+.fq p{margin:0 0 24px;color:#cfc6b5;line-height:1.75;max-width:720px;animation:fqi .5s ease}
+.fq p b{color:var(--gold2);font-weight:500}
+@keyframes fqi{from{opacity:0;transform:translateY(-6px)}}
+@media(max-width:1000px){.zd-grid{grid-template-columns:1fr 1fr;gap:10px}.zd{padding:14px;gap:10px;border-radius:14px}.zd svg{width:32px;height:32px;padding:7px}.zd span{font-size:.92rem}.zd small{font-size:.58rem}.fq summary{font-size:1rem;padding:20px 0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -724,6 +744,18 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
     <div class="step"><span class="n">03</span><h3>Agenda día y hora</h3><p>Atendemos de lunes a sábado. ¿Domingo? Coordinamos un horario especial contigo.</p></div>
     <div class="step"><span class="n">04</span><h3>Disfruta</h3><p>Llegas a un hogar impecable. Tu tranquilidad también es parte de nuestro servicio.</p></div>
   </div>
+</div></section>
+
+<section class="zf" id="distritos"><div class="wrap">
+  <span class="eyebrow">Distritos</span>
+  <h2 class="title">Llegamos a <em class="gold">tu distrito.</em></h2>
+  <div class="zd-grid"><a class="zd" data-wa data-msg="Hola! Quiero limpieza a domicilio en Miraflores." href="#"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Limpieza a domicilio en</small>Miraflores</span></a><a class="zd" data-wa data-msg="Hola! Quiero limpieza a domicilio en San Isidro." href="#"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Limpieza a domicilio en</small>San Isidro</span></a><a class="zd" data-wa data-msg="Hola! Quiero limpieza a domicilio en Barranco." href="#"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Limpieza a domicilio en</small>Barranco</span></a><a class="zd" data-wa data-msg="Hola! Quiero limpieza a domicilio en Chorrillos." href="#"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Limpieza a domicilio en</small>Chorrillos</span></a><a class="zd" data-wa data-msg="Hola! Quiero limpieza a domicilio en Santiago de Surco." href="#"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Limpieza a domicilio en</small>Santiago de Surco</span></a><a class="zd" data-wa data-msg="Hola! Quiero limpieza a domicilio en San Borja." href="#"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Limpieza a domicilio en</small>San Borja</span></a><a class="zd" data-wa data-msg="Hola! Quiero limpieza a domicilio en La Molina." href="#"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Limpieza a domicilio en</small>La Molina</span></a><a class="zd" data-wa data-msg="Hola! Quiero limpieza a domicilio en Jesús María." href="#"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Limpieza a domicilio en</small>Jesús María</span></a></div>
+</div></section>
+
+<section class="zf zf2" id="faq"><div class="wrap">
+  <span class="eyebrow">Preguntas frecuentes</span>
+  <h2 class="title">Resolvemos <em class="gold">tus dudas.</em></h2>
+  <div class="fq-list"><details class="fq"><summary>¿Cuál es el precio del servicio de limpieza a domicilio por horas?<i></i></summary><p>El costo es de <b>S/15 en promedio por hora</b> de limpieza. El precio final depende de cuántas horas y cuántas colaboradoras necesites; puedes calcularlo arriba en la sección de precios.</p></details><details class="fq"><summary>¿Cuántas horas necesito contratar para la limpieza de mi hogar?<i></i></summary><p>Te damos una recomendación de tiempo referencial, pero recuerda que depende de cada ambiente, el estado del inmueble, el tamaño, la cantidad de muebles y la suciedad acumulada. Escríbenos y te orientamos.</p></details><details class="fq"><summary>¿Ustedes llevan los productos de limpieza?<i></i></summary><p>Nuestro servicio es de <b>mano de obra</b>: trabajamos con los productos e insumos que tú nos brindas.</p></details><details class="fq"><summary>¿En qué distritos atienden?<i></i></summary><p>Miraflores, San Isidro, Barranco, Chorrillos, Santiago de Surco, San Borja, La Molina y Jesús María. Si estás en otro distrito, escríbenos y lo coordinamos.</p></details><details class="fq"><summary>¿Qué días trabajan?<i></i></summary><p>De lunes a sábado, en el horario que tú elijas. ¿Domingo? Coordinamos un horario especial contigo.</p></details><details class="fq"><summary>¿Cómo reservo?<i></i></summary><p>Escríbenos por WhatsApp, cuéntanos qué necesitas y te cotizamos al toque.</p></details></div>
 </div></section>
 
 <section class="cta"><div class="cta-bg"></div><div class="wrap">
