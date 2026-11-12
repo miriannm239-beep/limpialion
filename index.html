@@ -581,23 +581,6 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
 @keyframes incpr{0%{box-shadow:0 0 0 0 rgba(232,71,95,.5)}70%{box-shadow:0 0 0 12px rgba(232,71,95,0)}100%{box-shadow:0 0 0 0 rgba(232,71,95,0)}}
 .inc-h,.inc-card ul,.inc-note{position:relative;z-index:1}
 @media(max-width:600px){.inc-card.yes ul{grid-template-columns:1fr}.yes .inc-i{flex-direction:row;align-items:flex-start;padding:16px}.nope .inc-i{font-size:.84rem!important}}
-
-/* ===== portada: mini antes/despues ===== */
-.hba{display:block;margin-top:26px;text-decoration:none;color:inherit}
-.hba-f{position:relative;aspect-ratio:16/10;border-radius:22px;overflow:hidden;box-shadow:0 40px 80px -35px rgba(0,0,0,.9),0 0 0 1px rgba(231,195,110,.35);background:#1a1712}
-.hba-f img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hba-a{position:absolute;inset:0;clip-path:inset(0 100% 0 0)}
-.hba-l{position:absolute;top:0;bottom:0;left:0;width:2px;background:linear-gradient(#f7e3a6,#c9a24e);box-shadow:0 0 18px 3px rgba(231,195,110,.7);opacity:0}
-.hba-t{position:absolute;left:12px;top:12px;padding:6px 12px;border-radius:999px;background:rgba(18,14,10,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(231,195,110,.35);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:#f3d98b}
-.hba-t b{font-weight:600}
-.hba-c{position:absolute;right:12px;bottom:12px;padding:6px 12px;border-radius:999px;background:rgba(247,241,230,.9);color:#2a2119;font-size:.7rem;font-weight:600}
-@media(min-width:1100px){
- .hba{position:absolute;right:0;top:0;margin:0;width:min(26vw,360px);z-index:3;animation:hbaf 6s ease-in-out infinite}
- .hba-f{aspect-ratio:4/5;transform:rotate(2.5deg);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
- .hba:hover .hba-f{transform:rotate(0) scale(1.03)}
- .hba::before{content:"";position:absolute;inset:-14px -14px 14px 14px;border-radius:26px;border:1px solid rgba(231,195,110,.3);transform:rotate(-3deg);pointer-events:none}
-}
-@keyframes hbaf{50%{transform:translateY(-14px)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -643,10 +626,6 @@ nav .btn{min-height:40px;padding:0 18px;border-radius:12px;font-size:.82rem}
         <a class="btn btn-line" href="#precios">Ver precios</a>
       </div>
     </div>
-    <a class="hba h-fade" href="#ba" aria-label="Ver antes y después">
-      <div class="hba-f"><img src="img/sala-antes.webp" alt="Sala antes de la limpieza"><div class="hba-a" id="hbaA"><img src="img/sala-despues.webp" alt="Sala después de la limpieza"></div><i class="hba-l" id="hbaL"></i>
-        <span class="hba-t"><b id="hbaT">Antes</b></span><span class="hba-c">Trabajo real · Lima</span></div>
-    </a>
   </div>
   <div class="scroll-ind">DESLIZA</div>
 </header>
@@ -1052,10 +1031,6 @@ gsap.set('.nope .inc-i',{opacity:0});
 document.querySelectorAll('.inc-n').forEach(n=>{const T=+n.textContent;n.textContent='0';ScrollTrigger.create({trigger:n,start:'top 90%',once:true,onEnter:()=>{const o={v:0};gsap.to(o,{v:T,duration:1.4,ease:'power2.out',onUpdate:()=>n.textContent=Math.round(o.v)})}})});
 if(matchMedia('(hover:hover)').matches)document.querySelectorAll('.inc-card').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
 })();
-/* portada antes/despues */
-(()=>{const A=document.getElementById('hbaA');if(!A)return;const L=document.getElementById('hbaL'),T=document.getElementById('hbaT'),o={p:0};
-const set=()=>{A.style.clipPath=`inset(0 ${100-o.p}% 0 0)`;L.style.left=o.p+'%';L.style.opacity=(o.p>1&&o.p<99)?1:0;T.textContent=o.p>50?'Después':'Antes'};
-gsap.timeline({repeat:-1,delay:2.2}).to(o,{p:100,duration:1.6,ease:'power2.inOut',onUpdate:set}).to({},{duration:2.6}).to(o,{p:0,duration:1.6,ease:'power2.inOut',onUpdate:set}).to({},{duration:2})})();
 addEventListener('load',()=>ScrollTrigger.refresh());
 addEventListener('resize',()=>movePill(tabs.querySelector('.on')));
 </script>
