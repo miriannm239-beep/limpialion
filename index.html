@@ -138,12 +138,12 @@ section{position:relative}
 .calc h3{font-family:var(--serif);font-weight:400;font-size:1.6rem}
 .calc .sub{color:var(--muted);font-size:.85rem;margin-top:6px}
 .hours{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:28px 0}
-.hours button{font:600 1rem var(--sans);padding:14px 0;border-radius:14px;border:1px solid rgba(212,175,90,.25);background:transparent;color:var(--cream);cursor:pointer;transition:all .35s}
+.hours button{font-variant-numeric:tabular-nums;font:600 1rem var(--sans);padding:14px 0;border-radius:14px;border:1px solid rgba(212,175,90,.25);background:transparent;color:var(--cream);cursor:pointer;transition:all .35s}
 .hours button small{display:block;font-size:.6rem;font-weight:400;color:var(--muted);margin-top:2px}
 .hours button.on{background:var(--grad);color:var(--ink);border-color:transparent;transform:translateY(-3px);box-shadow:0 10px 30px -10px rgba(212,175,90,.6)}
 .hours button.on small{color:#4a3c1c}
 .calc-out{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(212,175,90,.15);padding-top:24px;gap:16px;flex-wrap:wrap}
-.calc-out .price{font-family:var(--serif);font-size:clamp(3rem,6vw,4.4rem);font-weight:300;line-height:1}
+.calc-out .price{font-variant-numeric:tabular-nums;font-family:var(--serif);font-size:clamp(3rem,6vw,4.4rem);font-weight:300;line-height:1}
 .calc-out .meta{color:var(--muted);font-size:.85rem;margin-top:8px}
 .calc .btn{margin-top:26px;width:100%;justify-content:center}
 @media(max-width:900px){.p-grid{grid-template-columns:1fr}.hours{grid-template-columns:repeat(3,1fr)}}
@@ -654,14 +654,15 @@ document.querySelectorAll('[data-wa]').forEach(a=>{a.href=waLink(a.dataset.msg);
 /* calculator */
 const H=[[5,76,'hasta 70'],[6,89,'85'],[7,99.9,'100'],[8,120,'120'],[9,135,'140'],[10,150,'160 a más']];
 const hb=document.getElementById('hours');
-H.forEach((h,i)=>{const b=document.createElement('button');b.innerHTML=`${h[0]}h<small>S/${h[1]}</small>`;b.onclick=()=>pick(i);hb.appendChild(b)});
+const fmt=v=>v%1?v.toFixed(2):String(v);
+H.forEach((h,i)=>{const b=document.createElement('button');b.innerHTML=`${h[0]}h<small>S/${fmt(h[1])}</small>`;b.onclick=()=>pick(i);hb.appendChild(b)});
 let cur=0;
 function pick(i){
   hb.querySelectorAll('button').forEach((b,j)=>b.classList.toggle('on',j===i));
   const h=H[i],el=document.getElementById('price'),o={v:H[cur][1]};
-  gsap.to(o,{v:h[1],duration:.8,ease:'power3.out',onUpdate:()=>el.textContent=(h[1]%1?o.v.toFixed(2):Math.round(o.v))});
+  gsap.to(o,{v:h[1],duration:.8,ease:'power3.out',onUpdate:()=>el.textContent=(h[1]%1?o.v.toFixed(2):Math.round(o.v)),onComplete:()=>el.textContent=fmt(h[1])});
   document.getElementById('meta').textContent=`${h[0]} horas · referencia ${h[2]} m²`;
-  document.getElementById('calcWa').href=waLink(`Hola! Quiero reservar ${h[0]} horas de limpieza (S/${h[1]}).`);
+  document.getElementById('calcWa').href=waLink(`Hola! Quiero reservar ${h[0]} horas de limpieza (S/${fmt(h[1])}).`);
   cur=i;
 }
 document.getElementById('calcWa').target='_blank';
